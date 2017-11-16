@@ -37,6 +37,7 @@ public class Main extends Application {
 		
 	}
 	public static void Firefox(){
+		//---------------INICIAR FIREFOX----------//
 		String exe = "*\\geckodriver.exe";
 		System.setProperty("webdriver.firefox.marionette", exe);
 		DesiredCapabilities capacidad = DesiredCapabilities.firefox();
@@ -62,53 +63,43 @@ public class Main extends Application {
 		waitingBoschCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(3) > li:nth-child(1) > a:nth-child(2)") ) );
 		controlador.findElement(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(3) > li:nth-child(1) > a:nth-child(2)")).click();
 		
-		//---------------LLEGAR A CAFETERAS----------//
+		//---------------BOSCH CAPSULAS----------//
 		ArrayList<Cafetera> cafeterasCapsulasBoschCI = new ArrayList<Cafetera>();
 		ArrayList<WebElement> cafeterasCapsulasBoschNomCI = new ArrayList<WebElement>();
 		ArrayList<WebElement> cafeterasCapsulasBoschPreCI = new ArrayList<WebElement>();
 		cafeterasCapsulasBoschNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
-		
-		for(int a = 0; a<cafeterasCapsulasBoschNomCI.size(); a++){
-			Cafetera cafetera = new Cafetera(cafeterasCapsulasBoschNomCI.get(a).getAttribute("title"), null);
-			
-			cafeterasCapsulasBoschCI.add(cafetera);
-		}
+		cafeterasCapsulasBoschPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasCapsulasBoschNomCI);
+		//borrarInecesarios(cafeterasCapsulasBoschPreCI);
+		cafeterasCapsulasBoschCI = llenarLista(cafeterasCapsulasBoschNomCI, cafeterasCapsulasBoschPreCI);
 		//BORRAR LOS PRINT
-		for(WebElement c : cafeterasCapsulasBoschNomCI){
-			System.out.println("Cafeteras Capsulas Bosch CI :" + c.getAttribute("title"));
-		}
-		System.out.println("ResultadosCapsulasBoschCI " + cafeterasCapsulasBoschNomCI.size());
+		printRes(cafeterasCapsulasBoschCI);
 		//----------
+		
+		//---------------DELONGHI CAPSULAS----------//
 		
 		controlador.findElement(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(3) > li:nth-child(1) > a:nth-child(2)")).click();
 		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(2) > a:nth-child(2)")).click();	
 		((JavascriptExecutor) controlador).executeScript("arguments[0].scrollIntoView();",controlador.findElement(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(4) > a:nth-child(1)")));
 		((JavascriptExecutor) controlador).executeScript("window.scrollBy(0,-200)");
 		WebDriverWait waitingScroll = new WebDriverWait(controlador, 20);
-		waitingScroll.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(4) > a:nth-child(1)") ) );			
-		ArrayList<WebElement> cafeterasCapsulasDeLonghiCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
-		for(int j = 0; j<4; j++){
-			cafeterasCapsulasDeLonghiCI.remove(cafeterasCapsulasDeLonghiCI.size()-1);
-		}
+		waitingScroll.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(4) > a:nth-child(1)") ) );
+		ArrayList<Cafetera> cafeterasCapsulasDeLonghiCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasCapsulasDeLonghiNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		ArrayList<WebElement> cafeterasCapsulasDeLonghiPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));
+		borrarInecesarios(cafeterasCapsulasDeLonghiNomCI);
+		borrarInecesarios(cafeterasCapsulasDeLonghiPreCI);
+		cafeterasCapsulasDeLonghiCI = llenarLista(cafeterasCapsulasDeLonghiNomCI, cafeterasCapsulasDeLonghiPreCI);
 		//BORRAR LOS PRINT
-				for(WebElement c : cafeterasCapsulasDeLonghiCI){
-					System.out.println("Cafeteras Capsulas Aux CI :" + c.getAttribute("title"));
-				}
-				System.out.println("ResultadosCapsulasAuxCI " + cafeterasCapsulasDeLonghiCI.size());
-				//----------
+		printRes(cafeterasCapsulasDeLonghiCI);
+		//----------
 				
-		System.out.println("OK1");
 		WebDriverWait waitingSiguiente = new WebDriverWait(controlador, 20);
-		System.out.println("OK2");
 		waitingSiguiente.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(4) > a:nth-child(1)") ) );	
-		System.out.println("OK3");
 		controlador.findElement(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(4) > a:nth-child(1)")).click();
-		System.out.println("OK4");
-		ArrayList<WebElement> cafeterasCapsulasAuxCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
-		for(WebElement c : cafeterasCapsulasAuxCI){
-			WebElement aux = c;
-			cafeterasCapsulasDeLonghiCI.add(aux);			
-		}
+		ArrayList<WebElement> cafeterasCapsulasDeLonghiNom2CI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		ArrayList<WebElement> cafeterasCapsulasDeLonghiPre2CI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));
+		
 		System.out.println("OK5");
 		System.out.println("OK6");		
 		System.out.println("ResultadosCapsulasDeLonghiCI " + cafeterasCapsulasDeLonghiCI.size());
@@ -147,5 +138,34 @@ public class Main extends Application {
 			listaElementos.remove(listaElementos.size()-1);
 		}
 		return listaElementos;
+	}
+	public static ArrayList<Cafetera> llenarLista(ArrayList<WebElement> listaNombre, ArrayList<WebElement> listaPrecio){
+		Cafetera cafetera = new Cafetera();
+		ArrayList<Cafetera> listaCafeteras = new ArrayList<Cafetera>();
+		for(int a = 0; a<listaNombre.size(); a++){
+			cafetera = new Cafetera(listaNombre.get(a).getAttribute("title"), listaPrecio.get(a).getText());			
+			listaCafeteras.add(cafetera);
+		}
+		return listaCafeteras;
+	}
+	public static void printRes(ArrayList<Cafetera> listaElementos){
+		for(Cafetera c : listaElementos){
+			System.out.println("Cafeteras :" + c.getNombre() + " " + c.getPrecio());
+		}
+		System.out.println("ResultadosCapsulasCI " + listaElementos.size());
+	}
+	public static void printResNom(ArrayList<WebElement> listaElementos){
+		for(WebElement c : listaElementos){
+			System.out.println("Nombre :" + c.getAttribute("title"));
+		}
+		System.out.println("ResultadosCapsulasCI " + listaElementos.size());
+		
+	}
+	public static void printResPre(ArrayList<WebElement> listaElementos){
+		for(WebElement c : listaElementos){
+			System.out.println("Precio :" + c.getText());
+		}
+		System.out.println("ResultadosCapsulasCI " + listaElementos.size());
+		
 	}
 }
