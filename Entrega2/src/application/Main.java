@@ -126,8 +126,22 @@ public class Main extends Application {
 		cafeterasCapsulasDigratoCI = llenarLista(cafeterasCapsulasDigratoNomCI, cafeterasCapsulasDigratoPreCI);
 		//BORRAR LOS PRINT
 		printRes(cafeterasCapsulasDigratoCI);
+		//----------
 		
-		
+		//---------------KRUPS CAPSULAS----------//
+		controlador.findElement(By.cssSelector("a.selected")).click();
+		controlador.findElement(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(3) > li:nth-child(4) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasCapsulasKrupsCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasCapsulasKrupsNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasCapsulasKrupsPreCI = new ArrayList<WebElement>();
+		cafeterasCapsulasKrupsNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasCapsulasKrupsPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasCapsulasKrupsNomCI);
+		//borrarInecesarios(cafeterasCapsulasKrupsPreCI);
+		cafeterasCapsulasKrupsCI = llenarLista(cafeterasCapsulasKrupsNomCI, cafeterasCapsulasKrupsPreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasCapsulasKrupsCI);
+		//----------
 		
 		
 				
