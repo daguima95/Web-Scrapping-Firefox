@@ -155,6 +155,8 @@ public class Main extends Application {
 		controlador.findElement(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(2) > li:nth-child(3) > a:nth-child(2)")).click();
 		
 		//-------BOSCH GOTEO--------//
+		WebDriverWait waitingBoschGCI = new WebDriverWait(controlador, 10);
+		waitingBoschGCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(1) > a:nth-child(2)")));
 		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(1) > a:nth-child(2)")).click();
 		ArrayList<Cafetera> cafeterasGoteoBoschCI = new ArrayList<Cafetera>();
 		ArrayList<WebElement> cafeterasGoteoBoschNomCI = new ArrayList<WebElement>();
@@ -168,7 +170,7 @@ public class Main extends Application {
 		printRes(cafeterasGoteoBoschCI);
 		//----------
 		
-		//-------RUSHELL HOBS GOTEO--------// ESTO NO VA BIEN
+		//-------RUSHELL HOBS GOTEO--------//
 		controlador.findElement(By.cssSelector(".selected")).click();
 		WebDriverWait waitingRushelGCI = new WebDriverWait(controlador, 10);
 		waitingRushelGCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(2) > a:nth-child(2)")));
@@ -253,6 +255,131 @@ public class Main extends Application {
 		printRes(cafeterasGoteoUfesaCI);
 		//----------
 				
+		
+		//-------CAMBIANDO A SEMIAUTOMATICAS----------//
+		controlador.findElement(By.id("1")).click();
+		////--------------------AQUI VA UN WAIT--------------------------------
+		controlador.findElement(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(2) > li:nth-child(4) > a:nth-child(2)"));
+		
+		//-------BOSCH SEMIAUTOMATICAS--------//
+		WebDriverWait waitingBoschSCI = new WebDriverWait(controlador, 10);
+		waitingBoschSCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(1) > a:nth-child(2)")));
+		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(1) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasSemiBoschCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasSemiBoschNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasSemiBoschPreCI = new ArrayList<WebElement>();
+		cafeterasSemiBoschNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasSemiBoschPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasSemiBoschNomCI,1);
+		//borrarInecesarios(cafeterasSemiBoschPreCI,1);
+		cafeterasSemiBoschCI = llenarLista(cafeterasSemiBoschNomCI, cafeterasSemiBoschPreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasSemiBoschCI);
+		//----------
+
+
+		//-------DELONGHI SEMIAUTOMATICAS--------//
+		controlador.findElement(By.cssSelector(".selected")).click();
+		WebDriverWait waitingDeLonghiSCI = new WebDriverWait(controlador, 10);
+		waitingDeLonghiSCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(2) > a:nth-child(2)")));
+		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(2) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasSemiDeLonghiCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasSemiDeLonghiNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasSemiDeLonghiPreCI = new ArrayList<WebElement>();
+		cafeterasSemiDeLonghiNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasSemiDeLonghiPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasSemiDeLonghiNomCI,3);
+		//borrarInecesarios(cafeterasSemiDeLonghiPreCI,3);
+		cafeterasSemiDeLonghiCI = llenarLista(cafeterasSemiDeLonghiNomCI, cafeterasSemiDeLonghiPreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasSemiDeLonghiCI);
+		//----------
+		
+		//-------JURA SEMIAUTOMATICA--------//
+		controlador.findElement(By.cssSelector(".selected")).click();
+		WebDriverWait waitingJuraSCI = new WebDriverWait(controlador, 10);
+		waitingJuraSCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(3) > a:nth-child(2)")));
+		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(3) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasSemiJuraCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasSemiJuraNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasSemiJuraPreCI = new ArrayList<WebElement>();
+		cafeterasSemiJuraNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasSemiJuraPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasSemiJuraNomCI,3);
+		//borrarInecesarios(cafeterasSemiJuraPreCI,3);
+		cafeterasSemiJuraCI = llenarLista(cafeterasSemiJuraNomCI, cafeterasSemiJuraPreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasSemiJuraCI);
+		//----------
+		
+		//-------KRUPS SEMIAUTOMATICA--------//
+		controlador.findElement(By.cssSelector(".selected")).click();
+		WebDriverWait waitingKrupsSCI = new WebDriverWait(controlador, 10);
+		waitingKrupsSCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(4) > a:nth-child(2)")));
+		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(4) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasSemiKrupsCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasSemiKrupsNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasSemiKrupsPreCI = new ArrayList<WebElement>();
+		cafeterasSemiKrupsNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasSemiKrupsPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasSemiKrupsNomCI,3);
+		//borrarInecesarios(cafeterasSemiKrupsPreCI,3);
+		cafeterasSemiKrupsCI = llenarLista(cafeterasSemiKrupsNomCI, cafeterasSemiKrupsPreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasSemiKrupsCI);
+		//----------
+		
+		//-------MIELE SEMIAUTOMATICA--------//
+		controlador.findElement(By.cssSelector(".selected")).click();
+		WebDriverWait waitingMieleSCI = new WebDriverWait(controlador, 10);
+		waitingMieleSCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(5) > a:nth-child(2)")));
+		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(5) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasSemiMieleCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasSemiMieleNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasSemiMielePreCI = new ArrayList<WebElement>();
+		cafeterasSemiMieleNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasSemiMielePreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasSemiMieleNomCI,3);
+		//borrarInecesarios(cafeterasSemiMielePreCI,3);
+		cafeterasSemiMieleCI = llenarLista(cafeterasSemiMieleNomCI, cafeterasSemiMielePreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasSemiMieleCI);
+		//----------
+		
+		//-------PHILIPS SEMIAUTOMATICA--------//
+		controlador.findElement(By.cssSelector(".selected")).click();
+		WebDriverWait waitingPhilSCI = new WebDriverWait(controlador, 10);
+		waitingPhilSCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(6) > a:nth-child(2)")));
+		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(6) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasSemiPhilCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasSemiPhilNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasSemiPhilPreCI = new ArrayList<WebElement>();
+		cafeterasSemiPhilNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasSemiPhilPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasSemiPhilNomCI,3);
+		//borrarInecesarios(cafeterasSemiPhilPreCI,3);
+		cafeterasSemiPhilCI = llenarLista(cafeterasSemiPhilNomCI, cafeterasSemiPhilPreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasSemiPhilCI);
+		//----------
+		
+		//-------SAECO SEMIAUTOMATICA--------//
+		controlador.findElement(By.cssSelector(".selected")).click();
+		WebDriverWait waitingSaecoSCI = new WebDriverWait(controlador, 10);
+		waitingSaecoSCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(6) > a:nth-child(2)")));
+		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(6) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasSemiSaecoCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasSemiSaecoNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasSemiSaecoPreCI = new ArrayList<WebElement>();
+		cafeterasSemiSaecoNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasSemiSaecoPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasSemiSaecoNomCI,3);
+		//borrarInecesarios(cafeterasSemiSaecoPreCI,3);
+		cafeterasSemiSaecoCI = llenarLista(cafeterasSemiSaecoNomCI, cafeterasSemiSaecoPreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasSemiSaecoCI);
+		//----------
+		
 		/*@SuppressWarnings("deprecation")
 		WebDriver controlador2 = new FirefoxDriver(capacidad);
 		controlador2.get("https://www.mediamarkt.es/");
