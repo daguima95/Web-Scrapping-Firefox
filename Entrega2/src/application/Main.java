@@ -162,6 +162,21 @@ public class Main extends Application {
 		printRes(cafeterasGoteoBoschCI);
 		//----------
 		
+		//-------RUSHELL HOBS GOTEO--------//
+		controlador.findElement(By.cssSelector(".selected")).click();
+		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(2) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasGoteoRushellCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasGoteoRushellNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasGoteoRushellPreCI = new ArrayList<WebElement>();
+		cafeterasGoteoRushellNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasGoteoRushellPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		borrarInecesarios(cafeterasGoteoRushellNomCI,3);
+		borrarInecesarios(cafeterasGoteoRushellPreCI,3);
+		cafeterasGoteoRushellCI = llenarLista(cafeterasGoteoRushellNomCI, cafeterasGoteoRushellPreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasGoteoRushellCI);
+		//----------
+				
 				
 		/*@SuppressWarnings("deprecation")
 		WebDriver controlador2 = new FirefoxDriver(capacidad);
