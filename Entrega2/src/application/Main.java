@@ -64,6 +64,7 @@ public class Main extends Application {
 		controlador.findElement(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(3) > li:nth-child(1) > a:nth-child(2)")).click();
 		
 		//---------------BOSCH CAPSULAS----------//
+		
 		ArrayList<Cafetera> cafeterasCapsulasBoschCI = new ArrayList<Cafetera>();
 		ArrayList<WebElement> cafeterasCapsulasBoschNomCI = new ArrayList<WebElement>();
 		ArrayList<WebElement> cafeterasCapsulasBoschPreCI = new ArrayList<WebElement>();
@@ -112,27 +113,23 @@ public class Main extends Application {
 		printRes(cafeterasCapsulasDeLonghiCI);
 		//----------
 		
+		//---------------DIGRATO CAPSULAS----------//
+		controlador.findElement(By.cssSelector("a.selected")).click();
+		controlador.findElement(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(3) > li:nth-child(3) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasCapsulasDigratoCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasCapsulasDigratoNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasCapsulasDigratoPreCI = new ArrayList<WebElement>();
+		cafeterasCapsulasDigratoNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasCapsulasDigratoPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasCapsulasDigratoNomCI);
+		//borrarInecesarios(cafeterasCapsulasDigratoPreCI);
+		cafeterasCapsulasDigratoCI = llenarLista(cafeterasCapsulasDigratoNomCI, cafeterasCapsulasDigratoPreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasCapsulasDigratoCI);
 		
 		
 		
 		
-		
-		//----------
-		/*do{	
-			((JavascriptExecutor) controlador).executeScript("arguments[0].scrollIntoView();",controlador.findElement(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(5) > a:nth-child(1)")));
-			((JavascriptExecutor) controlador).executeScript("window.scrollBy(0,-200)");
-			ArrayList<WebElement> cafeterasCapsulasAux = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
-			for(int i = 0; i<4; i++){
-				cafeterasCapsulasAux.remove(cafeterasCapsulasAux.size()-1);
-			}
-			for(WebElement c : cafeterasCapsulasAux){
-				System.out.println(c.getText());
-			}
-			System.out.println("Resultados " + cafeterasCapsulasAux.size());
-			cafeterasCapsulas.addAll(cafeterasCapsulasAux);			
-			controlador.findElement(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(5) > a:nth-child(1)")).click();
-		}while(controlador.findElement(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(5) > a:nth-child(1)")).isEnabled() != false);
-		*/
 				
 		/*@SuppressWarnings("deprecation")
 		WebDriver controlador2 = new FirefoxDriver(capacidad);
