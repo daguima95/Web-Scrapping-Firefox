@@ -71,6 +71,7 @@ public class Main extends Application {
 		cafeterasCapsulasBoschPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
 		//borrarInecesarios(cafeterasCapsulasBoschNomCI);
 		//borrarInecesarios(cafeterasCapsulasBoschPreCI);
+		cafeterasCapsulasBoschPreCI.remove(1);
 		cafeterasCapsulasBoschCI = llenarLista(cafeterasCapsulasBoschNomCI, cafeterasCapsulasBoschPreCI);
 		//BORRAR LOS PRINT
 		printRes(cafeterasCapsulasBoschCI);
@@ -87,8 +88,8 @@ public class Main extends Application {
 		ArrayList<Cafetera> cafeterasCapsulasDeLonghiCI = new ArrayList<Cafetera>();
 		ArrayList<WebElement> cafeterasCapsulasDeLonghiNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
 		ArrayList<WebElement> cafeterasCapsulasDeLonghiPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));
-		borrarInecesarios(cafeterasCapsulasDeLonghiNomCI);
-		borrarInecesarios(cafeterasCapsulasDeLonghiPreCI);
+		//borrarInecesarios(cafeterasCapsulasDeLonghiNomCI);
+		//borrarInecesarios(cafeterasCapsulasDeLonghiPreCI);
 		cafeterasCapsulasDeLonghiCI = llenarLista(cafeterasCapsulasDeLonghiNomCI, cafeterasCapsulasDeLonghiPreCI);
 		//BORRAR LOS PRINT
 		printRes(cafeterasCapsulasDeLonghiCI);
@@ -97,12 +98,25 @@ public class Main extends Application {
 		WebDriverWait waitingSiguiente = new WebDriverWait(controlador, 20);
 		waitingSiguiente.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(4) > a:nth-child(1)") ) );	
 		controlador.findElement(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(4) > a:nth-child(1)")).click();
+		ArrayList<Cafetera> cafeterasCapsulasDeLonghi2CI = new ArrayList<Cafetera>();
 		ArrayList<WebElement> cafeterasCapsulasDeLonghiNom2CI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
-		ArrayList<WebElement> cafeterasCapsulasDeLonghiPre2CI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));
+		ArrayList<WebElement> cafeterasCapsulasDeLonghiPre2CI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasCapsulasDeLonghiNom2CI);
+		//borrarInecesarios(cafeterasCapsulasDeLonghiPre2CI);
+		cafeterasCapsulasDeLonghi2CI = llenarLista(cafeterasCapsulasDeLonghiNom2CI, cafeterasCapsulasDeLonghiPre2CI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasCapsulasDeLonghi2CI);
+		//----------
+		cafeterasCapsulasDeLonghiCI.addAll(cafeterasCapsulasDeLonghi2CI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasCapsulasDeLonghiCI);
+		//----------
 		
-		System.out.println("OK5");
-		System.out.println("OK6");		
-		System.out.println("ResultadosCapsulasDeLonghiCI " + cafeterasCapsulasDeLonghiCI.size());
+		
+		
+		
+		
+		
 		//----------
 		/*do{	
 			((JavascriptExecutor) controlador).executeScript("arguments[0].scrollIntoView();",controlador.findElement(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(5) > a:nth-child(1)")));
