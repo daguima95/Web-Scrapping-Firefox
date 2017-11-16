@@ -81,6 +81,8 @@ public class Main extends Application {
 		//---------------DELONGHI CAPSULAS----------//
 		
 		controlador.findElement(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(3) > li:nth-child(1) > a:nth-child(2)")).click();
+		WebDriverWait waitingDeLonghiCCI = new WebDriverWait(controlador, 10);
+		waitingDeLonghiCCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(2) > a:nth-child(2)")));
 		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(2) > a:nth-child(2)")).click();	
 		((JavascriptExecutor) controlador).executeScript("arguments[0].scrollIntoView();",controlador.findElement(By.cssSelector(".pagination > ul:nth-child(1) > li:nth-child(4) > a:nth-child(1)")));
 		((JavascriptExecutor) controlador).executeScript("window.scrollBy(0,-200)");
@@ -115,6 +117,8 @@ public class Main extends Application {
 		
 		//---------------DIGRATO CAPSULAS----------//
 		controlador.findElement(By.cssSelector("a.selected")).click();
+		WebDriverWait waitingDigratoCCI = new WebDriverWait(controlador, 10);
+		waitingDigratoCCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(3) > li:nth-child(3) > a:nth-child(2)")));
 		controlador.findElement(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(3) > li:nth-child(3) > a:nth-child(2)")).click();
 		ArrayList<Cafetera> cafeterasCapsulasDigratoCI = new ArrayList<Cafetera>();
 		ArrayList<WebElement> cafeterasCapsulasDigratoNomCI = new ArrayList<WebElement>();
@@ -130,6 +134,8 @@ public class Main extends Application {
 		
 		//---------------KRUPS CAPSULAS----------//
 		controlador.findElement(By.cssSelector("a.selected")).click();
+		WebDriverWait waitingKrupsCCI = new WebDriverWait(controlador, 10);
+		waitingKrupsCCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(3) > li:nth-child(4) > a:nth-child(2)")));
 		controlador.findElement(By.cssSelector("li.sliding:nth-child(2) > ul:nth-child(3) > li:nth-child(4) > a:nth-child(2)")).click();
 		ArrayList<Cafetera> cafeterasCapsulasKrupsCI = new ArrayList<Cafetera>();
 		ArrayList<WebElement> cafeterasCapsulasKrupsNomCI = new ArrayList<WebElement>();
@@ -162,8 +168,10 @@ public class Main extends Application {
 		printRes(cafeterasGoteoBoschCI);
 		//----------
 		
-		//-------RUSHELL HOBS GOTEO--------//
+		//-------RUSHELL HOBS GOTEO--------// ESTO NO VA BIEN
 		controlador.findElement(By.cssSelector(".selected")).click();
+		WebDriverWait waitingRushelGCI = new WebDriverWait(controlador, 10);
+		waitingRushelGCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(2) > a:nth-child(2)")));
 		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(2) > a:nth-child(2)")).click();
 		ArrayList<Cafetera> cafeterasGoteoRushellCI = new ArrayList<Cafetera>();
 		ArrayList<WebElement> cafeterasGoteoRushellNomCI = new ArrayList<WebElement>();
@@ -179,6 +187,8 @@ public class Main extends Application {
 		
 		//-------SAIVOD GOTEO--------//
 		controlador.findElement(By.cssSelector(".selected")).click();
+		WebDriverWait waitingSaivodGCI = new WebDriverWait(controlador, 10);
+		waitingSaivodGCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(3) > a:nth-child(2)")));
 		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(3) > a:nth-child(2)")).click();
 		ArrayList<Cafetera> cafeterasGoteoSaivodCI = new ArrayList<Cafetera>();
 		ArrayList<WebElement> cafeterasGoteoSaivodNomCI = new ArrayList<WebElement>();
@@ -194,6 +204,8 @@ public class Main extends Application {
 		
 		//-------SEVERIN GOTEO--------//
 		controlador.findElement(By.cssSelector(".selected")).click();
+		WebDriverWait waitingSeverinGCI = new WebDriverWait(controlador, 10);
+		waitingSeverinGCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(4) > a:nth-child(2)")));
 		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(4) > a:nth-child(2)")).click();
 		ArrayList<Cafetera> cafeterasGoteoSeverinCI = new ArrayList<Cafetera>();
 		ArrayList<WebElement> cafeterasGoteoSeverinNomCI = new ArrayList<WebElement>();
@@ -206,7 +218,40 @@ public class Main extends Application {
 		//BORRAR LOS PRINT
 		printRes(cafeterasGoteoSeverinCI);
 		//----------
-				
+		
+		//-------TAURUS GOTEO--------//
+		controlador.findElement(By.cssSelector(".selected")).click();
+		WebDriverWait waitingTaurusGCI = new WebDriverWait(controlador, 10);
+		waitingTaurusGCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(5) > a:nth-child(2)")));
+		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(5) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasGoteoTaurusCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasGoteoTaurusNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasGoteoTaurusPreCI = new ArrayList<WebElement>();
+		cafeterasGoteoTaurusNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasGoteoTaurusPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasGoteoTaurusNomCI,4);
+		//borrarInecesarios(cafeterasGoteoTaurusPreCI,4);
+		cafeterasGoteoTaurusCI = llenarLista(cafeterasGoteoTaurusNomCI, cafeterasGoteoTaurusPreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasGoteoTaurusCI);
+		//----------
+		
+		//-------UFESA GOTEO--------//
+		controlador.findElement(By.cssSelector(".selected")).click();
+		WebDriverWait waitingUfesaGCI = new WebDriverWait(controlador, 10);
+		waitingUfesaGCI.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(6) > a:nth-child(2)")));
+		controlador.findElement(By.cssSelector("ul.dimensions:nth-child(3) > li:nth-child(6) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> cafeterasGoteoUfesaCI = new ArrayList<Cafetera>();
+		ArrayList<WebElement> cafeterasGoteoUfesaNomCI = new ArrayList<WebElement>();
+		ArrayList<WebElement> cafeterasGoteoUfesaPreCI = new ArrayList<WebElement>();
+		cafeterasGoteoUfesaNomCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'js-product-click event')]"));
+		cafeterasGoteoUfesaPreCI = (ArrayList<WebElement>) controlador.findElements(By.xpath("//*[contains(@class, 'current ')]"));		
+		//borrarInecesarios(cafeterasGoteoUfesaNomCI,4);
+		//borrarInecesarios(cafeterasGoteoUfesaPreCI,4);
+		cafeterasGoteoUfesaCI = llenarLista(cafeterasGoteoUfesaNomCI, cafeterasGoteoUfesaPreCI);
+		//BORRAR LOS PRINT
+		printRes(cafeterasGoteoUfesaCI);
+		//----------
 				
 		/*@SuppressWarnings("deprecation")
 		WebDriver controlador2 = new FirefoxDriver(capacidad);
