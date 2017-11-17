@@ -573,6 +573,7 @@ public class Main extends Application {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
 		ArrayList<Cafetera> listaKrupMonoMM = new ArrayList<Cafetera>();
+		System.out.println("EMPIEZA LA MAGIA");
 		listaKrupMonoMM = llenarListaMM(controlador2);
 		printRes(listaKrupMonoMM);
 		
@@ -632,25 +633,36 @@ public class Main extends Application {
 		
 	}
 	public static ArrayList<Cafetera> llenarListaMM(WebDriver controlador){
-		System.out.print("DENTRO");
+		System.out.println("DENTRO");
 		Cafetera cafetera = new Cafetera();
 		ArrayList<Cafetera> listaCafetera = new ArrayList<Cafetera>();
 		ArrayList<WebElement> listaContador = new ArrayList<WebElement>();
 		ArrayList<WebElement> listaNom = new ArrayList<WebElement>();
 		ArrayList<WebElement> listaPre = new ArrayList<WebElement>();
+		System.out.println("ESPERANDO");
 		WebDriverWait waitingStale = new WebDriverWait(controlador, 10);
 		waitingStale.until(ExpectedConditions.visibilityOfAllElements(controlador.findElements(By.xpath("//*[contains(@class, 'product')]"))));
+		System.out.println("COGIENDO ELEMENTOS");
 		listaContador = (ArrayList<WebElement>) controlador.findElements(By.id("categoryProductContainer"));
 		int contador = 0;
 		System.out.println("VA EL FOR");
 		for(WebElement c : listaContador){
 			System.out.println("DENTRO FOR");
+			WebDriverWait waitingRefresh = new WebDriverWait(controlador, 10);
+			waitingRefresh.until(ExpectedConditions.visibilityOfAllElements(controlador.findElements(By.xpath("//*[contains(@class, 'product')]"))));
+			System.out.println("REFRESH");
 			c.click();
 			System.out.println("CLICK");
-			WebDriverWait waitingCharge = new WebDriverWait(controlador, 10);
-			waitingCharge.until(ExpectedConditions.visibilityOfAllElements(controlador.findElements(By.xpath("//*[contains(@class, 'mm-text--truncate mm-text--truncate-fallback')]"))));
+			WebDriverWait waitingStaleNom = new WebDriverWait(controlador, 10);
+			waitingStaleNom.until(ExpectedConditions.visibilityOf(controlador.findElement(By.xpath("//*[contains(@class, 'mm-text--truncate mm-text--truncate-fallback')]"))));
+			System.out.println("VA EL NOMBRE");
 			listaNom.add(controlador.findElement(By.xpath("//*[contains(@class, 'mm-text--truncate mm-text--truncate-fallback')]")));
+			System.out.println("NOMBRE ADDED");
+			WebDriverWait waitingStalePre = new WebDriverWait(controlador, 10);
+			waitingStalePre.until(ExpectedConditions.visibilityOf(controlador.findElement(By.xpath("//*[contains(@class, 'mm-price media__price bigprices active)]"))));
+			System.out.println("VA EL PRECIO");
 			listaPre.add(controlador.findElement(By.xpath("//*[contains(@class, 'mm-price media__price bigprices active)]")));
+			System.out.println("PRECIO ADDED");
 			//MAGIA//
 			System.out.println("Nombre: " + listaNom.get(contador).getText());
 			System.out.println("Precio: " + listaPre.get(contador).getText());
