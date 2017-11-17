@@ -31,7 +31,8 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-		FirefoxCI();
+		//FirefoxCI();
+		FirefoxMM();
 		//launch(args);
 		
 	}
@@ -527,10 +528,14 @@ public class Main extends Application {
 		//BORRAR LOS PRINT
 		printRes(cafeterasSaivodIECI);
 		//----------	
-		
+		controlador.quit();
 	}
 	public static void FirefoxMM(){
+		//---------------INICIAR FIREFOX----------//
+		String exe = "*\\geckodriver.exe";
+		System.setProperty("webdriver.firefox.marionette", exe);
 		DesiredCapabilities capacidad = DesiredCapabilities.firefox();
+		capacidad.setCapability("marionette", true);
 		@SuppressWarnings("deprecation")
 		WebDriver controlador2 = new FirefoxDriver(capacidad);
 		controlador2.get("https://www.mediamarkt.es/");
@@ -538,13 +543,27 @@ public class Main extends Application {
 		WebDriverWait waitingCookiesMM = new WebDriverWait(controlador2, 10);
 		waitingCookiesMM.until(ExpectedConditions.presenceOfElementLocated(By.id("close-cookies-law")));
 		controlador2.findElement(By.id("close-cookies-law")).click();
-		String buscador = "cafeteras" + '\n';
-		WebElement cajaBusquedaMM = controlador2.findElement(By.name("query"));
-		cajaBusquedaMM.click();
-		cajaBusquedaMM.sendKeys(buscador);
+		controlador2.findElement(By.cssSelector("#world_hogar-jardin > a:nth-child(1)")).click();
+		WebDriverWait waitingCafeMM = new WebDriverWait(controlador2, 10);
+		waitingCafeMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#category_hogar-jardin--ctg-cafe > a:nth-child(1)")));
+		controlador2.findElement(By.cssSelector("#category_hogar-jardin--ctg-cafe > a:nth-child(1)")).click();
 		
-				
+		//--------MONODOSIS-------//
+		
+		WebDriverWait waitingMonoMM = new WebDriverWait(controlador2, 10);
+		waitingMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a.categoryTreeFirst")));
+		controlador2.findElement(By.cssSelector("a.categoryTreeFirst")).click();
+		WebDriverWait waitingFilterMM = new WebDriverWait(controlador2, 10);
+		waitingFilterMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a.filterElement:nth-child(2)")));
+		controlador2.findElement(By.cssSelector("a.filterElement:nth-child(2)")).click();
+		controlador2.findElement(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(3)")).click();
+		controlador2.findElement(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(2) > select:nth-child(1) > option:nth-child(3)")).click();
+		
+		//-----------KRUPS-------//
+		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
 	}
+	
+	
 	public static ArrayList<WebElement> borrarInecesarios(ArrayList<WebElement> listaElementos, int numeroElementos){
 		if(numeroElementos != listaElementos.size()){
 			for(int j = 0; j<4; j++){
