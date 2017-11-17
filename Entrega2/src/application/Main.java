@@ -17,8 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
 
-public class Main extends Application {
-	static WebDriver controlador2;
+public class Main extends Application { 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -582,10 +581,23 @@ public class Main extends Application {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
 		ArrayList<Cafetera> listaKrupMonoMM = new ArrayList<Cafetera>();
-		System.out.println("EMPIEZA LA MAGIA");
-		listaKrupMonoMM = llenarListaMM();
-		printRes(listaKrupMonoMM);
+		System.out.println("EMPIEZA LA MAGIA");		
+		ArrayList<WebElement> listaNom = new ArrayList<WebElement>();
+		ArrayList<WebElement> listaPre = new ArrayList<WebElement>();
+		System.out.println("ESPERANDO");
+		WebDriverWait waitingStale = new WebDriverWait(controlador2, 10);
+		waitingStale.until(ExpectedConditions.visibilityOfAllElements(controlador2.findElements(By.xpath("//*[contains(@class, 'lazy loaded')]"))));
+		System.out.println("COGIENDO ELEMENTOS");		
+		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
+		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));	
+		/*printResNomMM(listaNom);
+		printResPreMM(listaPre);	*/				
+		listaKrupMonoMM = llenarListaMM(listaNom, listaPre);
+		printRes(listaKrupMonoMM);		
 		
+		
+		//----------DELONGHI------//
+		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
 		
 	}
 	
@@ -607,6 +619,15 @@ public class Main extends Application {
 		}
 		return listaCafeteras;
 	}
+	public static ArrayList<Cafetera> llenarListaMM(ArrayList<WebElement> listaNombre, ArrayList<WebElement> listaPrecio){
+		Cafetera cafetera = new Cafetera();
+		ArrayList<Cafetera> listaCafeteras = new ArrayList<Cafetera>();
+		for(int a = 0; a<listaNombre.size(); a++){
+			cafetera = new Cafetera(listaNombre.get(a).getText(), listaPrecio.get(a).getAttribute("content"));			
+			listaCafeteras.add(cafetera);
+		}
+		return listaCafeteras;
+	}
 	public static void printRes(ArrayList<Cafetera> listaElementos){
 		for(Cafetera c : listaElementos){
 			System.out.println("Cafeteras :" + c.getNombre() + " " + c.getPrecio());
@@ -622,7 +643,7 @@ public class Main extends Application {
 	}
 	public static void printResNomMM(ArrayList<WebElement> listaElementos){
 		for(WebElement c : listaElementos){
-			System.out.println("Nombre :" + c.getAttribute("innerHTML"));
+			System.out.println("Nombre :" + c.getText());
 		}
 		System.out.println("ResultadosCapsulasMM" + listaElementos.size());
 		
@@ -636,12 +657,12 @@ public class Main extends Application {
 	}
 	public static void printResPreMM(ArrayList<WebElement> listaElementos){
 		for(WebElement c : listaElementos){
-			System.out.println("Precio :" + c.getText());
+			System.out.println("Precio :" + c.getAttribute("content"));
 		}
 		System.out.println("ResultadosCapsulasMM " + listaElementos.size());
 		
 	}
-	public static ArrayList<Cafetera> llenarListaMM(){
+	public static ArrayList<Cafetera> llenarListaMM(WebDriver controlador2){
 		System.out.println("DENTRO");
 		Cafetera cafetera = new Cafetera();
 		ArrayList<Cafetera> listaCafetera = new ArrayList<Cafetera>();
@@ -650,9 +671,9 @@ public class Main extends Application {
 		ArrayList<WebElement> listaPre = new ArrayList<WebElement>();
 		System.out.println("ESPERANDO");
 		WebDriverWait waitingStale = new WebDriverWait(controlador2, 10);
-		waitingStale.until(ExpectedConditions.visibilityOfAllElements(controlador2.findElements(By.xpath("//*[contains(@class, 'product')]"))));
+		waitingStale.until(ExpectedConditions.visibilityOfAllElements(controlador2.findElements(By.xpath("//*[contains(@class, 'lazy loaded')]"))));
 		System.out.println("COGIENDO ELEMENTOS");
-		listaContador = (ArrayList<WebElement>) controlador2.findElements(By.id("categoryProductContainer"));
+		listaContador = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'lazy loaded')]"));
 		int contador = 0;
 		System.out.println("VA EL FOR");
 		for(WebElement c : listaContador){
