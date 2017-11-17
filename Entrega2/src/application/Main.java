@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -32,7 +33,11 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		//FirefoxCI();
-		FirefoxMM();
+		try {
+			FirefoxMM();
+		} catch (InterruptedException e) {			
+			e.printStackTrace();
+		}
 		//launch(args);
 		
 	}
@@ -530,7 +535,7 @@ public class Main extends Application {
 		//----------	
 		controlador.quit();
 	}
-	public static void FirefoxMM(){
+	public static void FirefoxMM() throws InterruptedException{
 		//---------------INICIAR FIREFOX----------//
 		String exe = "*\\geckodriver.exe";
 		System.setProperty("webdriver.firefox.marionette", exe);
@@ -556,11 +561,22 @@ public class Main extends Application {
 		WebDriverWait waitingFilterMM = new WebDriverWait(controlador2, 10);
 		waitingFilterMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a.filterElement:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("a.filterElement:nth-child(2)")).click();
+		WebDriverWait waitingFilterNeleMM = new WebDriverWait(controlador2, 10);
+		waitingFilterNeleMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(3)")));
 		controlador2.findElement(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(3)")).click();
 		controlador2.findElement(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(2) > select:nth-child(1) > option:nth-child(3)")).click();
 		
 		//-----------KRUPS-------//
+		JavascriptExecutor jse = (JavascriptExecutor)controlador2;
+		jse.executeScript("window.scrollBy(0,-250)", "");
+		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
+		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
+		ArrayList<Cafetera> listaKrupMonoMM = new ArrayList<Cafetera>();
+		listaKrupMonoMM = llenarListaMM(controlador2);
+		printRes(listaKrupMonoMM);
+		
+		
 	}
 	
 	
@@ -585,20 +601,64 @@ public class Main extends Application {
 		for(Cafetera c : listaElementos){
 			System.out.println("Cafeteras :" + c.getNombre() + " " + c.getPrecio());
 		}
-		System.out.println("ResultadosCapsulasCI " + listaElementos.size());
+		System.out.println("ResultadosCapsulas " + listaElementos.size());
 	}
-	public static void printResNom(ArrayList<WebElement> listaElementos){
+	public static void printResNomCI(ArrayList<WebElement> listaElementos){
 		for(WebElement c : listaElementos){
 			System.out.println("Nombre :" + c.getAttribute("title"));
 		}
 		System.out.println("ResultadosCapsulasCI " + listaElementos.size());
 		
 	}
-	public static void printResPre(ArrayList<WebElement> listaElementos){
+	public static void printResNomMM(ArrayList<WebElement> listaElementos){
+		for(WebElement c : listaElementos){
+			System.out.println("Nombre :" + c.getAttribute("innerHTML"));
+		}
+		System.out.println("ResultadosCapsulasMM" + listaElementos.size());
+		
+	}
+	public static void printResPreCI(ArrayList<WebElement> listaElementos){
 		for(WebElement c : listaElementos){
 			System.out.println("Precio :" + c.getText());
 		}
 		System.out.println("ResultadosCapsulasCI " + listaElementos.size());
 		
+	}
+	public static void printResPreMM(ArrayList<WebElement> listaElementos){
+		for(WebElement c : listaElementos){
+			System.out.println("Precio :" + c.getText());
+		}
+		System.out.println("ResultadosCapsulasMM " + listaElementos.size());
+		
+	}
+	public static ArrayList<Cafetera> llenarListaMM(WebDriver controlador){
+		System.out.print("DENTRO");
+		Cafetera cafetera = new Cafetera();
+		ArrayList<Cafetera> listaCafetera = new ArrayList<Cafetera>();
+		ArrayList<WebElement> listaContador = new ArrayList<WebElement>();
+		ArrayList<WebElement> listaNom = new ArrayList<WebElement>();
+		ArrayList<WebElement> listaPre = new ArrayList<WebElement>();
+		WebDriverWait waitingStale = new WebDriverWait(controlador, 10);
+		waitingStale.until(ExpectedConditions.visibilityOfAllElements(controlador.findElements(By.xpath("//*[contains(@class, 'product')]"))));
+		listaContador = (ArrayList<WebElement>) controlador.findElements(By.id("categoryProductContainer"));
+		int contador = 0;
+		System.out.println("VA EL FOR");
+		for(WebElement c : listaContador){
+			System.out.println("DENTRO FOR");
+			c.click();
+			System.out.println("CLICK");
+			WebDriverWait waitingCharge = new WebDriverWait(controlador, 10);
+			waitingCharge.until(ExpectedConditions.visibilityOfAllElements(controlador.findElements(By.xpath("//*[contains(@class, 'mm-text--truncate mm-text--truncate-fallback')]"))));
+			listaNom.add(controlador.findElement(By.xpath("//*[contains(@class, 'mm-text--truncate mm-text--truncate-fallback')]")));
+			listaPre.add(controlador.findElement(By.xpath("//*[contains(@class, 'mm-price media__price bigprices active)]")));
+			//MAGIA//
+			System.out.println("Nombre: " + listaNom.get(contador).getText());
+			System.out.println("Precio: " + listaPre.get(contador).getText());
+			cafetera.setNombre(listaNom.get(contador).getText());
+			cafetera.setPrecio(listaPre.get(contador).getText());
+			listaCafetera.add(cafetera);
+			contador++;
+		}
+		return listaCafetera;
 	}
 }
