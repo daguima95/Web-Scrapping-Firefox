@@ -1,7 +1,6 @@
 package application;
 	
 import java.util.ArrayList;
-import java.util.function.Predicate;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -35,12 +33,12 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-		FirefoxCI();
-		/*try {
+		//FirefoxCI();
+		try {
 			FirefoxMM();
 		} catch (InterruptedException e) {			
 			e.printStackTrace();
-		}*/
+		}
 		//launch(args);
 		
 	}
@@ -548,6 +546,7 @@ public class Main extends Application {
 		WebDriverWait waitingCookiesMM = new WebDriverWait(controlador2, 10);
 		waitingCookiesMM.until(ExpectedConditions.presenceOfElementLocated(By.id("close-cookies-law")));
 		controlador2.findElement(By.id("close-cookies-law")).click();
+		waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#world_hogar-jardin > a:nth-child(1)")).click();
 		WebDriverWait waitingCafeMM = new WebDriverWait(controlador2, 10);
 		waitingCafeMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#category_hogar-jardin--ctg-cafe > a:nth-child(1)")));
@@ -555,15 +554,13 @@ public class Main extends Application {
 		
 		//--------MONODOSIS-------//
 		
-		WebDriverWait waitingMonoMM = new WebDriverWait(controlador2, 10);
-		waitingMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a.categoryTreeFirst")));
+		waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("a.categoryTreeFirst")).click();
-		WebDriverWait waitingFilterMM = new WebDriverWait(controlador2, 10);
-		waitingFilterMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a.filterElement:nth-child(2)")));
+		waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("a.filterElement:nth-child(2)")).click();
-		WebDriverWait waitingFilterNeleMM = new WebDriverWait(controlador2, 10);
-		waitingFilterNeleMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(3)")));
+		waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(3)")).click();
+		waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(2) > select:nth-child(1) > option:nth-child(3)")).click();
 		
 		//-----------KRUPS-------//
@@ -572,24 +569,101 @@ public class Main extends Application {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
-		ArrayList<Cafetera> listaKrupMonoMM = new ArrayList<Cafetera>();
-		System.out.println("EMPIEZA LA MAGIA");		
+		System.out.println("Demn Krups1");
+		ArrayList<Cafetera> listaKrupMonoMM = new ArrayList<Cafetera>();	
 		ArrayList<WebElement> listaNom = new ArrayList<WebElement>();
 		ArrayList<WebElement> listaPre = new ArrayList<WebElement>();
-		System.out.println("ESPERANDO");
-		WebDriverWait waitingStale = new WebDriverWait(controlador2, 10);
-		waitingStale.until(ExpectedConditions.visibilityOfAllElements(controlador2.findElements(By.xpath("//*[contains(@class, 'lazy loaded')]"))));
-		System.out.println("COGIENDO ELEMENTOS");		
+		System.out.println("Demn Krups2");
+		waitForPageLoad(controlador2);	
+		System.out.println("Demn Krups3");
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
-		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));	
-		/*printResNomMM(listaNom);
-		printResPreMM(listaPre);	*/				
+		System.out.println("Demn Krups5");
+		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
+		System.out.println("Demn Krups5");
 		listaKrupMonoMM = llenarListaMM(listaNom, listaPre);
-		printRes(listaKrupMonoMM);		
+		printRes(listaKrupMonoMM);
+		System.out.println("Demn Krups6");
 		
 		
 		//----------DELONGHI------//
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
+		System.out.println("Demn Longhi1");
+		waitForPageLoad(controlador2);
+		System.out.println("Demn Longhi2");
+		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)")).click();
+		System.out.println("Demn Longhi3");
+		ArrayList<Cafetera> listaLonghiMonoMM = new ArrayList<Cafetera>();
+		System.out.println("Demn Longhi4");
+		waitForPageLoad(controlador2);
+		System.out.println("Demn Longhi5");
+		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
+		System.out.println("Demn Longhi6");
+		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));	
+		System.out.println("Demn Longhi7");
+		listaLonghiMonoMM = llenarListaMM(listaNom, listaPre);
+		System.out.println("Demn Longhi8");
+		printRes(listaLonghiMonoMM);
+		
+		//----------BOSCH------//
+		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)")).click();
+		System.out.println("Demn Bosch1");
+		waitForPageLoad(controlador2);
+		System.out.println("Demn Bosch2");
+		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
+		System.out.println("Demn Bosch3");
+		ArrayList<Cafetera> listaBoschMonoMM = new ArrayList<Cafetera>();
+		System.out.println("Demn Bosch4");
+		waitForPageLoad(controlador2);
+		System.out.println("Demn Bosch5");
+		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
+		System.out.println("Demn Bosch6");
+		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));			
+		System.out.println("Demn Bosch7");
+		listaBoschMonoMM = llenarListaMM(listaNom, listaPre);
+		System.out.println("Demn Bosch8");
+		printRes(listaBoschMonoMM);
+		
+		
+		//----------PHILIPS------//
+		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
+		System.out.println("Demn Phil1");
+		waitForPageLoad(controlador2);
+		System.out.println("Demn Phil2");
+		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)")).click();
+		System.out.println("Demn Phil3");
+		ArrayList<Cafetera> listaPhilMonoMM = new ArrayList<Cafetera>();
+		System.out.println("Demn Phil4");
+		waitForPageLoad(controlador2);
+		System.out.println("Demn Phil5");
+		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
+		System.out.println("Demn Phil6");
+		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));
+		System.out.println("Demn Phil7");
+		waitForPageLoad(controlador2);
+		System.out.println("Demn Phil8");
+		listaPhilMonoMM = llenarListaMM(listaNom, listaPre);
+		System.out.println("Demn Phil9");
+		printRes(listaPhilMonoMM);
+		
+		//----------TASSIMO------//
+		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)")).click();
+		System.out.println("Demn Tas1");
+		waitForPageLoad(controlador2);
+		System.out.println("Demn Tas2");
+		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)")).click();
+		System.out.println("Demn Tas3");
+		ArrayList<Cafetera> listaTasMonoMM = new ArrayList<Cafetera>();
+		System.out.println("Demn Tas4");
+		waitForPageLoad(controlador2);
+		System.out.println("Demn Tas5");
+		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
+		System.out.println("Demn Tas6");
+		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));	
+		System.out.println("Demn Tas7");
+		listaTasMonoMM = llenarListaMM(listaNom, listaPre);
+		System.out.println("Demn Tas8");
+		printRes(listaTasMonoMM);
+		
 		
 	}
 	
