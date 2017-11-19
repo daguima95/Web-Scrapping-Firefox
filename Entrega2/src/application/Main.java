@@ -48,24 +48,15 @@ public class Main extends Application {
 		}
 		return listaCafeteras;
 	}
-	public static ArrayList<Cafetera> llenarListaMM(ArrayList<WebElement> listaNombre, ArrayList<WebElement> listaPrecio, WebDriver controlador2, int intentos) throws Exception{
+	public static ArrayList<Cafetera> llenarListaMM(ArrayList<WebElement> listaNombre, ArrayList<WebElement> listaPrecio){
 		Cafetera cafetera = new Cafetera();
 		ArrayList<Cafetera> listaCafeteras = new ArrayList<Cafetera>();
 		String nombre;
 		String precio;
 		for(int a = 0; a<listaNombre.size(); a++){
-				if(intentos > 5){
-					throw new Exception("Ha ocurrido un error inesperado, intentelo de nuevo");
-				}else if(!listaNombre.get(a).isDisplayed() || !listaPrecio.get(a).isDisplayed()) {				
-					System.out.println("No está el elemento en la página en este momento, reintentando");
-					intentos++;
-					llenarListaMM(listaNombre, listaPrecio, controlador2, intentos);
-				}else{
-					nombre = listaNombre.get(a).getText();
-					System.out.println("nombre: " + nombre);
-					precio = listaPrecio.get(a).getAttribute("content");
-					System.out.println("precio: " + precio);
-					cafetera = new Cafetera(nombre, precio);					}						
+			nombre = listaNombre.get(a).getText();
+			precio = listaPrecio.get(a).getAttribute("content");
+			cafetera = new Cafetera(nombre, precio);											
 			listaCafeteras.add(cafetera);
 		}
 		return listaCafeteras;

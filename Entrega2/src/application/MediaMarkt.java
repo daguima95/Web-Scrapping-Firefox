@@ -41,7 +41,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -70,7 +70,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -99,7 +99,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -128,7 +128,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -157,7 +157,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -186,7 +186,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -215,7 +215,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -244,7 +244,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -273,7 +273,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -302,7 +302,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -331,7 +331,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -360,7 +360,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -389,7 +389,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -418,7 +418,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -447,7 +447,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -476,7 +476,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -505,7 +505,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -534,7 +534,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -563,7 +563,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -592,7 +592,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -621,7 +621,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -650,7 +650,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -679,7 +679,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -708,7 +708,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -737,7 +737,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -766,7 +766,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -795,7 +795,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -824,7 +824,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -853,7 +853,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -882,7 +882,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -911,7 +911,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -942,7 +942,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -973,7 +973,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -1002,7 +1002,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -1031,7 +1031,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -1060,7 +1060,7 @@ public class MediaMarkt {
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
 		controlador2.quit();
 		return listaCafetera;	
 	}
