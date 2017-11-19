@@ -32,7 +32,6 @@ public class Main extends Application {
 		launch(args);
 		
 	}			
-	///-------------MEDIA MARKT------------------/////	
 	public static ArrayList<WebElement> borrarInecesarios(ArrayList<WebElement> listaElementos){
 			for(int j = 0; j<4; j++){
 				listaElementos.remove(listaElementos.size()-1);
