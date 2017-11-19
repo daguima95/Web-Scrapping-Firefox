@@ -16,7 +16,7 @@ public class MediaMarkt {
 	public static ArrayList<WebElement> listaNom = new ArrayList<WebElement>();
 	public static ArrayList<WebElement> listaPre = new ArrayList<WebElement>();
 	
-	public static ArrayList<Cafetera> krupsMono(){
+	public static ArrayList<Cafetera> krupsMono() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("a.categoryTreeFirst")).click();
@@ -31,15 +31,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> deLonghiMono(){
+	public static ArrayList<Cafetera> deLonghiMono() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("a.categoryTreeFirst")).click();
@@ -54,15 +60,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> boschMono(){
+	public static ArrayList<Cafetera> boschMono() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("a.categoryTreeFirst")).click();
@@ -77,15 +89,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> philipsMono(){
+	public static ArrayList<Cafetera> philipsMono() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("a.categoryTreeFirst")).click();
@@ -100,15 +118,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> tassimoMono(){
+	public static ArrayList<Cafetera> tassimoMono() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("a.categoryTreeFirst")).click();
@@ -123,15 +147,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> krupsSuper(){
+	public static ArrayList<Cafetera> krupsSuper() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_730 > a:nth-child(1")).click();
@@ -146,15 +176,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> saecoSuper(){
+	public static ArrayList<Cafetera> saecoSuper() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_730 > a:nth-child(1")).click();
@@ -169,15 +205,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> deLonghiSuper(){
+	public static ArrayList<Cafetera> deLonghiSuper() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_730 > a:nth-child(1")).click();
@@ -192,15 +234,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> boschSuper(){
+	public static ArrayList<Cafetera> boschSuper() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_730 > a:nth-child(1")).click();
@@ -215,15 +263,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> juraSuper(){
+	public static ArrayList<Cafetera> juraSuper() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_730 > a:nth-child(1")).click();
@@ -238,15 +292,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> philipsSuper(){
+	public static ArrayList<Cafetera> philipsSuper() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_730 > a:nth-child(1")).click();
@@ -261,15 +321,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> krupsExpress(){
+	public static ArrayList<Cafetera> krupsExpress() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_731 > a:nth-child(1)")).click();
@@ -284,15 +350,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> saecoExpress(){
+	public static ArrayList<Cafetera> saecoExpress() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_731 > a:nth-child(1)")).click();
@@ -307,15 +379,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> deLonghiExpress(){
+	public static ArrayList<Cafetera> deLonghiExpress() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_731 > a:nth-child(1)")).click();
@@ -330,15 +408,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> ufesaExpress(){
+	public static ArrayList<Cafetera> ufesaExpress() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_731 > a:nth-child(1)")).click();
@@ -353,15 +437,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> jataExpress(){
+	public static ArrayList<Cafetera> jataExpress() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_731 > a:nth-child(1)")).click();
@@ -376,15 +466,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> orbegozoExpress(){
+	public static ArrayList<Cafetera> orbegozoExpress() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_731 > a:nth-child(1)")).click();
@@ -399,15 +495,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> whirlpoolExpress(){
+	public static ArrayList<Cafetera> whirlpoolExpress() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_731 > a:nth-child(1)")).click();
@@ -422,15 +524,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(7) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(7) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> illiExpress(){
+	public static ArrayList<Cafetera> illiExpress() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_731 > a:nth-child(1)")).click();
@@ -445,15 +553,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(8) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(8) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> osterExpress(){
+	public static ArrayList<Cafetera> osterExpress() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_731 > a:nth-child(1)")).click();
@@ -468,15 +582,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(9) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(9) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> solacExpress(){
+	public static ArrayList<Cafetera> solacExpress() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_731 > a:nth-child(1)")).click();
@@ -490,16 +610,22 @@ public class MediaMarkt {
 		jse.executeScript("window.scrollBy(0,-250)", "");
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
-		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
+		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(10) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(10) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> deLonghiGoteo(){
+	public static ArrayList<Cafetera> deLonghiGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
@@ -514,38 +640,50 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> boschGoteo(){
+	public static ArrayList<Cafetera> boschGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
 		Main.waitForPageLoad(controlador2);
-		controlador2.findElement(By.cssSelector("a.filterElement:nth-child(2)")).click();
+		controlador2.findElement(By.cssSelector("a.filterElement:nth-child(2)"));
+		WebElement element = controlador2.findElement(By.cssSelector("a.filterElement:nth-child(2)"));
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);
-		controlador2.findElement(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(3)")).click();
+		controlador2.findElement(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(3)"));
+		element = controlador2.findElement(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(3)"));
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("div.categoryFilter:nth-child(2) > div:nth-child(2) > select:nth-child(1) > option:nth-child(3)")).click();
 		JavascriptExecutor jse = (JavascriptExecutor)controlador2;
 		jse.executeScript("window.scrollBy(0,-250)", "");
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
-		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)")).click();
+		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)"));
+		element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)"));
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> philipsGoteo(){
+	public static ArrayList<Cafetera> philipsGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
@@ -560,15 +698,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> moulinexGoteo(){
+	public static ArrayList<Cafetera> moulinexGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
@@ -583,15 +727,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> taurusGoteo(){
+	public static ArrayList<Cafetera> taurusGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
@@ -606,15 +756,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> ufesaGoteo(){
+	public static ArrayList<Cafetera> ufesaGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
@@ -629,15 +785,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> jataGoteo(){
+	public static ArrayList<Cafetera> jataGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
@@ -652,15 +814,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(7) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(7) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> rushellGoteo(){
+	public static ArrayList<Cafetera> rushellGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
@@ -675,15 +843,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(8) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(8) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> okGoteo(){
+	public static ArrayList<Cafetera> okGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
@@ -698,15 +872,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(9) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(9) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> electroGoteo(){
+	public static ArrayList<Cafetera> electroGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
@@ -721,15 +901,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.filterElement:nth-child(10) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(10) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> wmfGoteo(){
+	public static ArrayList<Cafetera> wmfGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
@@ -744,17 +930,23 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("#categoryFilterMoreBrands > div:nth-child(1) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("#categoryFilterMoreBrands > div:nth-child(1) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		controlador2.findElement(By.cssSelector("#categoryFilterViewMoreBrands")).click();
 		Main.waitForPageLoad(controlador2);
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> tristarGoteo(){
+	public static ArrayList<Cafetera> tristarGoteo() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10000892 > a:nth-child(1)")).click();
@@ -769,17 +961,23 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("#categoryFilterMoreBrands > div:nth-child(2) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("#categoryFilterMoreBrands > div:nth-child(2) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		controlador2.findElement(By.cssSelector("#categoryFilterViewMoreBrands")).click();
 		Main.waitForPageLoad(controlador2);
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> taurusTradicional(){
+	public static ArrayList<Cafetera> taurusTradicional() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10002237 > a:nth-child(1)")).click();
@@ -794,15 +992,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> jataTradicional(){
+	public static ArrayList<Cafetera> jataTradicional() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10002237 > a:nth-child(1)")).click();
@@ -817,15 +1021,21 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.filterElement:nth-child(2) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
-	public static ArrayList<Cafetera> menzTradicional(){
+	public static ArrayList<Cafetera> menzTradicional() throws Exception{
 		WebDriver controlador2 = inicioFirefox();
 		Main.waitForPageLoad(controlador2);
 		controlador2.findElement(By.cssSelector("#categoryTree_10002237 > a:nth-child(1)")).click();
@@ -840,11 +1050,17 @@ public class MediaMarkt {
 		WebDriverWait waitingScrollKrupsMonoMM = new WebDriverWait(controlador2, 10);
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
+		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)"));
+		if (!element.isDisplayed()) {				
+			System.out.println("No está el elemento en la página en este momento");
+			JavascriptExecutor js = (JavascriptExecutor) controlador2;
+			js.executeScript("arguments[0].click();", element);
+			} else 	element.click();;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
 		Main.waitForPageLoad(controlador2);
-		listaCafetera = Main.llenarListaMM(listaNom, listaPre);
+		listaCafetera = Main.llenarListaMM(listaNom, listaPre, controlador2,0);
 		controlador2.quit();
 		return listaCafetera;	
 	}
@@ -869,4 +1085,5 @@ public class MediaMarkt {
 		controlador2.findElement(By.cssSelector("#category_hogar-jardin--ctg-cafe > a:nth-child(1)")).click();
 		return controlador2;
 	}
+	
 }
