@@ -32,11 +32,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -61,11 +57,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -90,11 +82,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -119,11 +107,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -148,11 +132,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -177,11 +157,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);;
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -206,11 +182,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -235,11 +207,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -264,11 +232,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -322,11 +286,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -351,11 +311,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -380,11 +336,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -409,11 +361,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -438,11 +386,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -467,11 +411,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -496,11 +436,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -525,11 +461,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(7) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(7) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -554,11 +486,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(8) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(8) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -583,11 +511,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(9) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(9) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -612,11 +536,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(10) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(10) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -641,11 +561,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -699,11 +615,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -728,11 +640,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(4) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -757,11 +665,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -786,11 +690,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(6) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -815,11 +715,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(7) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(7) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -844,11 +740,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(8) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(8) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -873,11 +765,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(9) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(9) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -902,11 +790,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.filterElement:nth-child(10) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(10) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -931,11 +815,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("#categoryFilterMoreBrands > div:nth-child(1) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("#categoryFilterMoreBrands > div:nth-child(1) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		controlador2.findElement(By.cssSelector("#categoryFilterViewMoreBrands")).click();
 		Main.waitForPageLoad(controlador2);
@@ -962,11 +842,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("#categoryFilterMoreBrands > div:nth-child(2) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("#categoryFilterMoreBrands > div:nth-child(2) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		controlador2.findElement(By.cssSelector("#categoryFilterViewMoreBrands")).click();
 		Main.waitForPageLoad(controlador2);
@@ -993,11 +869,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -1022,11 +894,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.filterElement:nth-child(2) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(2) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				
@@ -1051,11 +919,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(3) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				

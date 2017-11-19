@@ -29,7 +29,7 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		printRes(MediaMarkt.boschGoteo());
+		printRes(MediaMarkt.krupsExpress());
 		//launch(args);
 		
 	}			
@@ -55,7 +55,9 @@ public class Main extends Application {
 		String precio;
 		for(int a = 0; a<listaNombre.size(); a++){
 			nombre = listaNombre.get(a).getText();
+			System.out.println(nombre);
 			precio = listaPrecio.get(a).getAttribute("content");
+			System.out.println(precio);
 			cafetera = new Cafetera(nombre, precio);											
 			listaCafeteras.add(cafetera);
 		}
