@@ -1,11 +1,14 @@
 package application;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 
@@ -19,10 +22,13 @@ public class SampleGController{
 	protected CheckBox mediaMarkt;
 	@FXML
 	protected CheckBox corteIngles;
+	
+	@FXML 
+	protected Button buscar;
 	public static String tipos;
 	public static String marcas;
-	public static CheckBox MM;
-	public static CheckBox CI;
+	public static Boolean MM;
+	public static Boolean CI;
 	
 	@SuppressWarnings("unused")
 	private Main main;
@@ -33,69 +39,29 @@ public class SampleGController{
 	@FXML
 	private void initialize(){
 		tipo.getItems().clear();
-		tipo.getItems().addAll("capsulas","goteo","superautomáticas","espresso","italianas");
-		tipo.getSelectionModel().select("capsulas");
+		tipo.getItems().addAll(" ","capsulas","goteo","superautomaticas","espresso","italianas");
+		tipo.getSelectionModel().select(" ");
 		marca.getItems().clear();
-		marca.getItems().addAll("bosch", "deLonghi", "digrato", "krups", "monsial", "rushell", "saivod", "severin", "taurus", "ufesa", "jura", "miele", "philips", "saeco", "oster", "smeg", "solac", "tassimo", "jata", "orbegozo", "whirlpool", "illi", "moulinex", "ok", "electrolux", "wmf", "tristar", "menz&konecke");
-		marca.getSelectionModel().select("bosch");
+		marca.getItems().addAll(" ","bosch", "deLonghi", "digrato", "krups", "monsial", "rushell", "saivod", "severin", "taurus", "ufesa", "jura", "miele", "philips", "saeco", "oster", "smeg", "solac", "tassimo", "jata", "orbegozo", "whirlpool", "illi", "moulinex", "ok", "electrolux", "wmf", "tristar", "menz&konecke");
+		marca.getSelectionModel().select(" ");
 		mediaMarkt.setSelected(false);
 		corteIngles.setSelected(false);
-		tipo.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-
-			@Override
-			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				tipos = newValue;
-				
-			}		
-		} 
-		);
-		marca.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-
-			@Override
-			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				marcas = newValue;
-				
-			}
-		}  );
-		MM.selectedProperty().addListener(new ChangeListener<Boolean>() {
-
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {				
-				MM.setSelected(newValue);
-			}
-			
-		});
-		CI.selectedProperty().addListener(new ChangeListener<Boolean>() {
-
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {				
-				CI.setSelected(newValue);
-			}
-			
-		});
+			 
 	}
+	private void handleButtonAction(ActionEvent event) throws Exception {
+       tipos = tipo.getSelectionModel().getSelectedItem();
+       marcas = marca.getSelectionModel().getSelectedItem();
+       MM = mediaMarkt.isSelected();
+       CI = corteIngles.isSelected();
+       Main.mostrarLista(tipos, marcas, MM, CI);
+             
+    }
 	
 		
 	
 	public void setMain(Main main){
 		this.main = main;
 		
-	}
-	
-	public static String getTipo(){
-		return tipos;
-	}
-	public static String getMarca(){
-		return marcas;
-		
-	}
-	
-	
-	public static CheckBox getMediaMarkt(){
-		return MM;
-	}
-	public static CheckBox getCorteIngles(){
-		return CI;
 	}
 	
 	

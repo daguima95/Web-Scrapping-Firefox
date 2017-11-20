@@ -19,6 +19,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.media.Media;
 
 
 public class Main extends Application { 
@@ -156,42 +157,1158 @@ public class Main extends Application {
 		}
 	public static void comprobarDom(WebElement element, WebDriver controlador2){
 		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
+			System.out.println("No estï¿½ el elemento en la pç–Šina en este momento");
 			JavascriptExecutor js = (JavascriptExecutor) controlador2;
 			js.executeScript("arguments[0].click();", element);
 			} else 	element.click();;
 		
 	}
-	/*
-	public ObservableList<Cafetera> mostrarLista(){
+	
+	public static ObservableList<Cafetera> mostrarLista(String tipo, String marca, Boolean mediaMarkt, Boolean corteIngles) throws Exception{
 		ArrayList<Cafetera> solucion = new ArrayList<Cafetera>();
-		String tipos = SampleGController.getTipo();
-		String marcas = SampleGController.getMarca();
-		CheckBox MM = SampleGController.getMediaMarkt();
-		CheckBox CI = SampleGController.getCorteIngles();
-		if(tipos == "capsulas"){
-			if(MM.isSelected()){
+		String tipos = tipo;
+		String marcas = marca;
+		Boolean MM = mediaMarkt;
+		Boolean CI = corteIngles;
+		if(MM == true){
+			if(tipo == "capsulas"){		
 				
+				if(marcas == "bosch") {
+					solucion.addAll(MediaMarkt.boschMono());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "deLonghi") {
+					solucion.addAll(MediaMarkt.deLonghiMono());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "krups") {
+					solucion.addAll(MediaMarkt.krupsMono());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "philips") {
+					solucion.addAll(MediaMarkt.philipsMono());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "tassimo") {
+					solucion.addAll(MediaMarkt.tassimoMono());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == ""){
+					solucion.addAll(MediaMarkt.boschMono());
+					solucion.addAll(MediaMarkt.deLonghiMono());
+					solucion.addAll(MediaMarkt.krupsMono());
+					solucion.addAll(MediaMarkt.philipsMono());
+					solucion.addAll(MediaMarkt.tassimoMono());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
 				
-			}else if(CI.isSelected()){
+			}else if(tipo == "goteo"){
 				
-			}else{
+				if(marcas == "bosch") {
+					solucion.addAll(MediaMarkt.boschGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "deLonghi") {
+					solucion.addAll(MediaMarkt.deLonghiGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "rushell") {
+					solucion.addAll(MediaMarkt.rushellGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "taurus") {
+					solucion.addAll(MediaMarkt.taurusGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "ufesa") {
+					solucion.addAll(MediaMarkt.ufesaGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "philips") {
+					solucion.addAll(MediaMarkt.philipsGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "jata") {
+					solucion.addAll(MediaMarkt.jataGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "moulinex") {
+					solucion.addAll(MediaMarkt.moulinexGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+					
+				}else if(marcas == "ok") {
+					solucion.addAll(MediaMarkt.okGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "electrolux") {
+					solucion.addAll(MediaMarkt.electroGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "wmf") {
+					solucion.addAll(MediaMarkt.wmfGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "tristar") {
+					solucion.addAll(MediaMarkt.tristarGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas ==" ") {
+					solucion.addAll(MediaMarkt.boschGoteo());
+					solucion.addAll(MediaMarkt.deLonghiGoteo());
+					solucion.addAll(MediaMarkt.rushellGoteo());
+					solucion.addAll(MediaMarkt.taurusGoteo());
+					solucion.addAll(MediaMarkt.ufesaGoteo());
+					solucion.addAll(MediaMarkt.philipsGoteo());
+					solucion.addAll(MediaMarkt.jataGoteo());
+					solucion.addAll(MediaMarkt.moulinexGoteo());
+					solucion.addAll(MediaMarkt.okGoteo());
+					solucion.addAll(MediaMarkt.electroGoteo());
+					solucion.addAll(MediaMarkt.wmfGoteo());
+					solucion.addAll(MediaMarkt.tristarGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
 				
+			}else if(tipo == "superautomaticas") {
+				
+				if(marcas == "bosch") {
+					solucion.addAll(MediaMarkt.boschSuper());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "deLonghi") {
+					solucion.addAll(MediaMarkt.deLonghiSuper());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "krups") {
+					solucion.addAll(MediaMarkt.krupsSuper());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "philips") {
+					solucion.addAll(MediaMarkt.philipsSuper());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "saeco") {
+					solucion.addAll(MediaMarkt.saecoSuper());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "jura") {
+					solucion.addAll(MediaMarkt.juraSuper());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas ==" ") {
+					solucion.addAll(MediaMarkt.boschSuper());
+					solucion.addAll(MediaMarkt.deLonghiSuper());
+					solucion.addAll(MediaMarkt.krupsSuper());
+					solucion.addAll(MediaMarkt.philipsSuper());
+					solucion.addAll(MediaMarkt.saecoSuper());
+					solucion.addAll(MediaMarkt.juraSuper());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
+				
+			}else if(tipo == "expresso") {
+				
+				if(marcas == "deLonghi") {
+					solucion.addAll(MediaMarkt.deLonghiExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "krups") {
+					solucion.addAll(MediaMarkt.krupsExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "ufesa") {
+					solucion.addAll(MediaMarkt.ufesaExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "saeco") {
+					solucion.addAll(MediaMarkt.saecoExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "oster") {
+					solucion.addAll(MediaMarkt.osterExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "solac") {
+					solucion.addAll(MediaMarkt.solacExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "jata") {
+					solucion.addAll(MediaMarkt.jataExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "orbegozo") {
+					solucion.addAll(MediaMarkt.orbegozoExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "whirlpool") {
+					solucion.addAll(MediaMarkt.whirlpoolExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas ==" ") {
+					solucion.addAll(MediaMarkt.deLonghiExpress());
+					solucion.addAll(MediaMarkt.krupsExpress());
+					solucion.addAll(MediaMarkt.ufesaExpress());
+					solucion.addAll(MediaMarkt.saecoExpress());
+					solucion.addAll(MediaMarkt.osterExpress());
+					solucion.addAll(MediaMarkt.solacExpress());
+					solucion.addAll(MediaMarkt.jataExpress());
+					solucion.addAll(MediaMarkt.orbegozoExpress());
+					solucion.addAll(MediaMarkt.whirlpoolExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
+				
+			}else if(tipo == "italianas") {
+				
+				if(marcas == "jata") {
+					solucion.addAll(MediaMarkt.jataTradicional());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "taurus") {
+					solucion.addAll(MediaMarkt.taurusTradicional());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "menz&konecke") {
+					solucion.addAll(MediaMarkt.menzTradicional());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas ==" ") {
+					solucion.addAll(MediaMarkt.jataTradicional());
+					solucion.addAll(MediaMarkt.taurusTradicional());
+					solucion.addAll(MediaMarkt.menzTradicional());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
+			}else {
+				if(marcas == "bosch") {
+					solucion.addAll(MediaMarkt.boschGoteo());
+					solucion.addAll(MediaMarkt.boschMono());
+					solucion.addAll(MediaMarkt.boschSuper());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "deLonghi") {
+					solucion.addAll(MediaMarkt.deLonghiExpress());
+					solucion.addAll(MediaMarkt.deLonghiGoteo());
+					solucion.addAll(MediaMarkt.deLonghiMono());
+					solucion.addAll(MediaMarkt.deLonghiSuper());
+					return (ObservableList<Cafetera>) solucion;
+				
+				}else if(marcas == "krups") {
+					solucion.addAll(MediaMarkt.krupsExpress());
+					solucion.addAll(MediaMarkt.krupsMono());
+					solucion.addAll(MediaMarkt.krupsSuper());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "rushell") {
+					solucion.addAll(MediaMarkt.rushellGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "taurus") {
+					solucion.addAll(MediaMarkt.taurusGoteo());
+					solucion.addAll(MediaMarkt.taurusTradicional());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "ufesa") {
+					solucion.addAll(MediaMarkt.ufesaExpress());
+					solucion.addAll(MediaMarkt.ufesaGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "philips") {
+					solucion.addAll(MediaMarkt.philipsGoteo());
+					solucion.addAll(MediaMarkt.philipsMono());
+					solucion.addAll(MediaMarkt.philipsSuper());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "saeco") {
+					solucion.addAll(MediaMarkt.saecoExpress());
+					solucion.addAll(MediaMarkt.saecoSuper());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "oster") {
+					solucion.addAll(MediaMarkt.osterExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "solac") {
+					solucion.addAll(MediaMarkt.solacExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "tassimo") {
+					solucion.addAll(MediaMarkt.tassimoMono());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "jata") {
+					solucion.addAll(MediaMarkt.jataExpress());
+					solucion.addAll(MediaMarkt.jataGoteo());
+					solucion.addAll(MediaMarkt.jataTradicional());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "orbegozo") {
+					solucion.addAll(MediaMarkt.orbegozoExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "whirlpool") {
+					solucion.addAll(MediaMarkt.whirlpoolExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "illi") {
+					solucion.addAll(MediaMarkt.illiExpress());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "moulinex") {
+					solucion.addAll(MediaMarkt.moulinexGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "ok") {
+					solucion.addAll(MediaMarkt.okGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "electrolux") {
+					solucion.addAll(MediaMarkt.electroGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "wmf") {
+					solucion.addAll(MediaMarkt.wmfGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == "tristar") {
+					solucion.addAll(MediaMarkt.tristarGoteo());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas =="menz&konecke") {
+					solucion.addAll(MediaMarkt.menzTradicional());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas == " "){
+					solucion.addAll(MediaMarkt.boschGoteo());
+					solucion.addAll(MediaMarkt.boschMono());
+					solucion.addAll(MediaMarkt.boschSuper());
+					solucion.addAll(MediaMarkt.deLonghiExpress());
+					solucion.addAll(MediaMarkt.deLonghiGoteo());
+					solucion.addAll(MediaMarkt.deLonghiMono());
+					solucion.addAll(MediaMarkt.deLonghiSuper());
+					solucion.addAll(MediaMarkt.krupsExpress());
+					solucion.addAll(MediaMarkt.krupsMono());
+					solucion.addAll(MediaMarkt.krupsSuper());
+					solucion.addAll(MediaMarkt.rushellGoteo());
+					solucion.addAll(MediaMarkt.taurusGoteo());
+					solucion.addAll(MediaMarkt.taurusTradicional());
+					solucion.addAll(MediaMarkt.ufesaExpress());
+					solucion.addAll(MediaMarkt.ufesaGoteo());
+					solucion.addAll(MediaMarkt.philipsGoteo());
+					solucion.addAll(MediaMarkt.philipsMono());
+					solucion.addAll(MediaMarkt.philipsSuper());
+					solucion.addAll(MediaMarkt.saecoExpress());
+					solucion.addAll(MediaMarkt.saecoSuper());
+					solucion.addAll(MediaMarkt.osterExpress());
+					solucion.addAll(MediaMarkt.solacExpress());
+					solucion.addAll(MediaMarkt.tassimoMono());
+					solucion.addAll(MediaMarkt.jataExpress());
+					solucion.addAll(MediaMarkt.jataGoteo());
+					solucion.addAll(MediaMarkt.jataTradicional());
+					solucion.addAll(MediaMarkt.orbegozoExpress());
+					solucion.addAll(MediaMarkt.whirlpoolExpress());
+					solucion.addAll(MediaMarkt.illiExpress());
+					solucion.addAll(MediaMarkt.moulinexGoteo());
+					solucion.addAll(MediaMarkt.okGoteo());
+					solucion.addAll(MediaMarkt.electroGoteo());
+					solucion.addAll(MediaMarkt.wmfGoteo());
+					solucion.addAll(MediaMarkt.tristarGoteo());
+					solucion.addAll(MediaMarkt.menzTradicional());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
 				
 			}
+				
+		}else if(CI == true){
+			
+			if(tipo == "capsulas"){	
+				
+				if(marcas == "bosch") {
+					solucion.addAll(CorteIngles.boschCapsulas());
+					return (ObservableList<Cafetera>) solucion;					
+					
+				}else if(marcas == "deLonghi") {
+					solucion.addAll(CorteIngles.deLonghiCapsulas());
+					return (ObservableList<Cafetera>) solucion;		
+					
+					
+				}else if(marcas == "digrato") {
+					solucion.addAll(CorteIngles.digratoCapsulas());
+					return (ObservableList<Cafetera>) solucion;		
+					
+				}else if(marcas == "krups") {
+					solucion.addAll(CorteIngles.krupsCapsulas());
+					return (ObservableList<Cafetera>) solucion;		
+					
+				}else if(marcas ==" ") {
+					solucion.addAll(CorteIngles.boschCapsulas());					
+					solucion.addAll(CorteIngles.deLonghiCapsulas());
+					solucion.addAll(CorteIngles.digratoCapsulas());
+					solucion.addAll(CorteIngles.krupsCapsulas());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
+				
+			}else if(tipo == "goteo"){
+				
+				if(marcas == "bosch") {
+					solucion.addAll(CorteIngles.boschGoteo());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "deLonghi") {
+					solucion.addAll(CorteIngles.deLonghiGoteo());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "mondial") {
+					solucion.addAll(CorteIngles.mondialGoteo());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "rushell") {
+					solucion.addAll(CorteIngles.rushellGoteo());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "saivod") {
+					solucion.addAll(CorteIngles.saivodGoteo());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "severin") {
+					solucion.addAll(CorteIngles.severinGoteo());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "taurus") {
+					solucion.addAll(CorteIngles.taurusGoteo());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "ufesa") {
+					solucion.addAll(CorteIngles.ufesaGoteo());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas ==" ") {
+					solucion.addAll(CorteIngles.boschGoteo());
+					solucion.addAll(CorteIngles.deLonghiGoteo());
+					solucion.addAll(CorteIngles.mondialGoteo());
+					solucion.addAll(CorteIngles.rushellGoteo());
+					solucion.addAll(CorteIngles.saivodGoteo());
+					solucion.addAll(CorteIngles.severinGoteo());
+					solucion.addAll(CorteIngles.taurusGoteo());
+					solucion.addAll(CorteIngles.ufesaGoteo());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
+				
+			}else if(tipo == "superautomaticas") {
+				
+				if(marcas == "bosch") {
+					solucion.addAll(CorteIngles.boschSuper());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "deLonghi") {
+					solucion.addAll(CorteIngles.deLonghiSuper());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "jura") {
+					solucion.addAll(CorteIngles.juraSuper());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "krups") {
+					solucion.addAll(CorteIngles.krupsSuper());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "miele") {
+					solucion.addAll(CorteIngles.mieleSuper());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "philips") {
+					solucion.addAll(CorteIngles.philipsSuper());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "saeco") {
+					solucion.addAll(CorteIngles.saecoSuper());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas ==" ") {
+					solucion.addAll(CorteIngles.boschSuper());
+					solucion.addAll(CorteIngles.deLonghiSuper());
+					solucion.addAll(CorteIngles.juraSuper());
+					solucion.addAll(CorteIngles.krupsSuper());
+					solucion.addAll(CorteIngles.mieleSuper());
+					solucion.addAll(CorteIngles.philipsSuper());
+					solucion.addAll(CorteIngles.saecoSuper());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
+				
+			}else if(tipo == "expresso") {
+				
+				if(marcas == "deLonghi") {
+					solucion.addAll(CorteIngles.deLonghiManual());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "saivod") {
+					solucion.addAll(CorteIngles.saivodManual());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "saeco") {
+					solucion.addAll(CorteIngles.saecoManual());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "oster") {
+					solucion.addAll(CorteIngles.osterManual());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "smeg") {
+					solucion.addAll(CorteIngles.smegManual());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "solac") {
+					solucion.addAll(CorteIngles.solacManual());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "ufesa") {
+					solucion.addAll(CorteIngles.ufesaManual());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas ==" ") {
+					solucion.addAll(CorteIngles.deLonghiManual());
+					solucion.addAll(CorteIngles.saivodManual());
+					solucion.addAll(CorteIngles.saecoManual());
+					solucion.addAll(CorteIngles.osterManual());
+					solucion.addAll(CorteIngles.smegManual());
+					solucion.addAll(CorteIngles.solacManual());
+					solucion.addAll(CorteIngles.ufesaManual());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
+			}else if(tipo == "italianas") {
+				
+				if(marcas == "deLonghi") {
+					solucion.addAll(CorteIngles.deLonghiItalianaElectrica());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else if(marcas ==" ") {
+					solucion.addAll(CorteIngles.deLonghiItalianaElectrica());
+					return (ObservableList<Cafetera>) solucion;
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
+			}else {
+				if(marcas == "bosch") {
+					solucion.addAll(CorteIngles.boschCapsulas());					
+					solucion.addAll(CorteIngles.boschGoteo());
+					solucion.addAll(CorteIngles.boschSuper());					
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "deLonghi") {
+					solucion.addAll(CorteIngles.deLonghiGoteo());					
+					solucion.addAll(CorteIngles.deLonghiCapsulas());
+					solucion.addAll(CorteIngles.deLonghiItalianaElectrica());
+					solucion.addAll(CorteIngles.deLonghiManual());
+					solucion.addAll(CorteIngles.deLonghiSuper());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "digrato") {
+					solucion.addAll(CorteIngles.digratoCapsulas());					
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "krups") {
+					solucion.addAll(CorteIngles.krupsSuper());					
+					solucion.addAll(CorteIngles.krupsCapsulas());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "mondial") {
+					solucion.addAll(CorteIngles.mondialGoteo());					
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "rushell") {
+					solucion.addAll(CorteIngles.rushellGoteo());										
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "saivod") {
+					solucion.addAll(CorteIngles.saivodElectrica());					
+					solucion.addAll(CorteIngles.saivodGoteo());
+					solucion.addAll(CorteIngles.saivodManual());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "severin") {
+					solucion.addAll(CorteIngles.severinGoteo());										
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "taurus") {
+					solucion.addAll(CorteIngles.taurusGoteo());					
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "ufesa") {
+					solucion.addAll(CorteIngles.ufesaGoteo());					
+					solucion.addAll(CorteIngles.ufesaManual());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "philips") {
+					solucion.addAll(CorteIngles.philipsSuper());					
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "saeco") {
+					solucion.addAll(CorteIngles.saecoManual());					
+					solucion.addAll(CorteIngles.saecoSuper());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "oster") {
+					solucion.addAll(CorteIngles.osterManual());					
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "smeg") {
+					solucion.addAll(CorteIngles.smegManual());					
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "solac") {
+					solucion.addAll(CorteIngles.solacManual());					
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas == "jura") {
+					solucion.addAll(CorteIngles.juraSuper());					
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else if(marcas ==" ") {
+					solucion.addAll(CorteIngles.boschCapsulas());					
+					solucion.addAll(CorteIngles.deLonghiCapsulas());
+					solucion.addAll(CorteIngles.digratoCapsulas());
+					solucion.addAll(CorteIngles.krupsCapsulas());
+					solucion.addAll(CorteIngles.boschGoteo());
+					solucion.addAll(CorteIngles.deLonghiGoteo());
+					solucion.addAll(CorteIngles.mondialGoteo());
+					solucion.addAll(CorteIngles.rushellGoteo());
+					solucion.addAll(CorteIngles.saivodGoteo());
+					solucion.addAll(CorteIngles.severinGoteo());
+					solucion.addAll(CorteIngles.taurusGoteo());
+					solucion.addAll(CorteIngles.ufesaGoteo());					
+					solucion.addAll(CorteIngles.boschSuper());
+					solucion.addAll(CorteIngles.deLonghiSuper());
+					solucion.addAll(CorteIngles.juraSuper());
+					solucion.addAll(CorteIngles.krupsSuper());
+					solucion.addAll(CorteIngles.mieleSuper());
+					solucion.addAll(CorteIngles.philipsSuper());
+					solucion.addAll(CorteIngles.saecoSuper());
+					solucion.addAll(CorteIngles.deLonghiManual());
+					solucion.addAll(CorteIngles.saivodManual());
+					solucion.addAll(CorteIngles.saecoManual());
+					solucion.addAll(CorteIngles.osterManual());
+					solucion.addAll(CorteIngles.smegManual());
+					solucion.addAll(CorteIngles.solacManual());
+					solucion.addAll(CorteIngles.ufesaManual());
+					solucion.addAll(CorteIngles.deLonghiItalianaElectrica());
+					return (ObservableList<Cafetera>) solucion;	
+					
+				}else {return (ObservableList<Cafetera>) solucion;}
+				
+			}
+				
+		}else {
+			if(tipo == "capsulas"){				
+				if(marcas == "bosch") {
+					
+					
+				}else if(marcas == "deLonghi") {
+					
+					
+				}else if(marcas == "digrato") {
+					
+					
+				}else if(marcas == "krups") {
+					
+				}else if(marcas == "monsial") {
+					
+					
+				}else if(marcas == "rushell") {
+					
+					
+				}else if(marcas == "saivod") {
+					
+					
+				}else if(marcas == "severin") {
+					
+					
+				}else if(marcas == "taurus") {
+					
+					
+				}else if(marcas == "ufesa") {
+					
+					
+				}else if(marcas == "philips") {
+					
+					
+				}else if(marcas == "saeco") {
+					
+					
+				}else if(marcas == "oster") {
+					
+					
+				}else if(marcas == "smeg") {
+					
+					
+				}else if(marcas == "solac") {
+					
+					
+				}else if(marcas == "tassimo") {
+					
+					
+				}else if(marcas == "jata") {
+					
+					
+				}else if(marcas == "orbegozo") {
+					
+					
+				}else if(marcas == "whirlpool") {
+					
+					
+				}else if(marcas == "illi") {
+					
+					
+				}else if(marcas == "moulinex") {
+					
+					
+				}else if(marcas == "ok") {
+					
+					
+				}else if(marcas == "electrolux") {
+					
+					
+				}else if(marcas == "wmf") {
+					
+					
+				}else if(marcas == "tristar") {
+					
+					
+				}else if(marcas =="menz&konecke") {
+					
+					
+				}else {
+					
+					
+				}
+			}else if(tipo == "goteo"){
+				if(marcas == "bosch") {
+					
+					
+				}else if(marcas == "deLonghi") {
+					
+					
+				}else if(marcas == "digrato") {
+					
+					
+				}else if(marcas == "krups") {
+					
+				}else if(marcas == "monsial") {
+					
+					
+				}else if(marcas == "rushell") {
+					
+					
+				}else if(marcas == "saivod") {
+					
+					
+				}else if(marcas == "severin") {
+					
+					
+				}else if(marcas == "taurus") {
+					
+					
+				}else if(marcas == "ufesa") {
+					
+					
+				}else if(marcas == "philips") {
+					
+					
+				}else if(marcas == "saeco") {
+					
+					
+				}else if(marcas == "oster") {
+					
+					
+				}else if(marcas == "smeg") {
+					
+					
+				}else if(marcas == "solac") {
+					
+					
+				}else if(marcas == "tassimo") {
+					
+					
+				}else if(marcas == "jata") {
+					
+					
+				}else if(marcas == "orbegozo") {
+					
+					
+				}else if(marcas == "whirlpool") {
+					
+					
+				}else if(marcas == "illi") {
+					
+					
+				}else if(marcas == "moulinex") {
+					
+					
+				}else if(marcas == "ok") {
+					
+					
+				}else if(marcas == "electrolux") {
+					
+					
+				}else if(marcas == "wmf") {
+					
+					
+				}else if(marcas == "tristar") {
+					
+					
+				}else if(marcas =="menz&konecke") {
+					
+					
+				}else {
+					
+					
+				}
+				
+			}else if(tipo == "superautomaticas") {
+				if(marcas == "bosch") {
+					
+					
+				}else if(marcas == "deLonghi") {
+					
+					
+				}else if(marcas == "digrato") {
+					
+					
+				}else if(marcas == "krups") {
+					
+				}else if(marcas == "monsial") {
+					
+					
+				}else if(marcas == "rushell") {
+					
+					
+				}else if(marcas == "saivod") {
+					
+					
+				}else if(marcas == "severin") {
+					
+					
+				}else if(marcas == "taurus") {
+					
+					
+				}else if(marcas == "ufesa") {
+					
+					
+				}else if(marcas == "philips") {
+					
+					
+				}else if(marcas == "saeco") {
+					
+					
+				}else if(marcas == "oster") {
+					
+					
+				}else if(marcas == "smeg") {
+					
+					
+				}else if(marcas == "solac") {
+					
+					
+				}else if(marcas == "tassimo") {
+					
+					
+				}else if(marcas == "jata") {
+					
+					
+				}else if(marcas == "orbegozo") {
+					
+					
+				}else if(marcas == "whirlpool") {
+					
+					
+				}else if(marcas == "illi") {
+					
+					
+				}else if(marcas == "moulinex") {
+					
+					
+				}else if(marcas == "ok") {
+					
+					
+				}else if(marcas == "electrolux") {
+					
+					
+				}else if(marcas == "wmf") {
+					
+					
+				}else if(marcas == "tristar") {
+					
+					
+				}else if(marcas =="menz&konecke") {
+					
+					
+				}else {
+					
+					
+				}
+			}else if(tipo == "expresso") {
+				if(marcas == "bosch") {
+					
+					
+				}else if(marcas == "deLonghi") {
+					
+					
+				}else if(marcas == "digrato") {
+					
+					
+				}else if(marcas == "krups") {
+					
+				}else if(marcas == "monsial") {
+					
+					
+				}else if(marcas == "rushell") {
+					
+					
+				}else if(marcas == "saivod") {
+					
+					
+				}else if(marcas == "severin") {
+					
+					
+				}else if(marcas == "taurus") {
+					
+					
+				}else if(marcas == "ufesa") {
+					
+					
+				}else if(marcas == "philips") {
+					
+					
+				}else if(marcas == "saeco") {
+					
+					
+				}else if(marcas == "oster") {
+					
+					
+				}else if(marcas == "smeg") {
+					
+					
+				}else if(marcas == "solac") {
+					
+					
+				}else if(marcas == "tassimo") {
+					
+					
+				}else if(marcas == "jata") {
+					
+					
+				}else if(marcas == "orbegozo") {
+					
+					
+				}else if(marcas == "whirlpool") {
+					
+					
+				}else if(marcas == "illi") {
+					
+					
+				}else if(marcas == "moulinex") {
+					
+					
+				}else if(marcas == "ok") {
+					
+					
+				}else if(marcas == "electrolux") {
+					
+					
+				}else if(marcas == "wmf") {
+					
+					
+				}else if(marcas == "tristar") {
+					
+					
+				}else if(marcas =="menz&konecke") {
+					
+					
+				}else {
+					
+					
+				}
+			}else if(tipo == "italianas") {
+				if(marcas == "bosch") {
+					
+					
+				}else if(marcas == "deLonghi") {
+					
+					
+				}else if(marcas == "digrato") {
+					
+					
+				}else if(marcas == "krups") {
+					
+				}else if(marcas == "monsial") {
+					
+					
+				}else if(marcas == "rushell") {
+					
+					
+				}else if(marcas == "saivod") {
+					
+					
+				}else if(marcas == "severin") {
+					
+					
+				}else if(marcas == "taurus") {
+					
+					
+				}else if(marcas == "ufesa") {
+					
+					
+				}else if(marcas == "philips") {
+					
+					
+				}else if(marcas == "saeco") {
+					
+					
+				}else if(marcas == "oster") {
+					
+					
+				}else if(marcas == "smeg") {
+					
+					
+				}else if(marcas == "solac") {
+					
+					
+				}else if(marcas == "tassimo") {
+					
+					
+				}else if(marcas == "jata") {
+					
+					
+				}else if(marcas == "orbegozo") {
+					
+					
+				}else if(marcas == "whirlpool") {
+					
+					
+				}else if(marcas == "illi") {
+					
+					
+				}else if(marcas == "moulinex") {
+					
+					
+				}else if(marcas == "ok") {
+					
+					
+				}else if(marcas == "electrolux") {
+					
+					
+				}else if(marcas == "wmf") {
+					
+					
+				}else if(marcas == "tristar") {
+					
+					
+				}else if(marcas =="menz&konecke") {
+					
+					
+				}else {
+					
+					
+				}
+			}else {
+				if(marcas == "bosch") {
+					
+					
+				}else if(marcas == "deLonghi") {
+					
+					
+				}else if(marcas == "digrato") {
+					
+					
+				}else if(marcas == "krups") {
+					
+				}else if(marcas == "monsial") {
+					
+					
+				}else if(marcas == "rushell") {
+					
+					
+				}else if(marcas == "saivod") {
+					
+					
+				}else if(marcas == "severin") {
+					
+					
+				}else if(marcas == "taurus") {
+					
+					
+				}else if(marcas == "ufesa") {
+					
+					
+				}else if(marcas == "philips") {
+					
+					
+				}else if(marcas == "saeco") {
+					
+					
+				}else if(marcas == "oster") {
+					
+					
+				}else if(marcas == "smeg") {
+					
+					
+				}else if(marcas == "solac") {
+					
+					
+				}else if(marcas == "tassimo") {
+					
+					
+				}else if(marcas == "jata") {
+					
+					
+				}else if(marcas == "orbegozo") {
+					
+					
+				}else if(marcas == "whirlpool") {
+					
+					
+				}else if(marcas == "illi") {
+					
+					
+				}else if(marcas == "moulinex") {
+					
+					
+				}else if(marcas == "ok") {
+					
+					
+				}else if(marcas == "electrolux") {
+					
+					
+				}else if(marcas == "wmf") {
+					
+					
+				}else if(marcas == "tristar") {
+					
+					
+				}else if(marcas =="menz&konecke") {
+					
+					
+				}else {
+					
+					
+				}
+				
+			}	
+				
 		}
+				
+				
+			
+		
 		
 		return null;
 		
 		
 	}
 	
-	*/
-	public String escogerMarca(String marca){
-		
-		
-		
-		return null;
-		
-	}
 }

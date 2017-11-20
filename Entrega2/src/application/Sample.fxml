@@ -6,7 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleGController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleGController">
    <children>
       <ComboBox fx:id="marca" layoutX="76.0" layoutY="52.0" prefWidth="150.0" />
       <ComboBox fx:id="tipo" layoutX="399.0" layoutY="52.0" prefWidth="150.0" />
@@ -14,6 +14,6 @@
       <Label layoutX="358.0" layoutY="56.0" text="Tipo" />
       <CheckBox fx:id="mediaMarkt" layoutX="76.0" layoutY="285.0" mnemonicParsing="false" text="Media Markt" />
       <CheckBox fx:id="corteIngles" layoutX="76.0" layoutY="322.0" mnemonicParsing="false" text="El Corte Ingles" />
-      <Button layoutX="448.0" layoutY="310.0" mnemonicParsing="false" text="Buscar" />
+      <Button fx:id="buscar" layoutX="448.0" layoutY="310.0" mnemonicParsing="false" text="Buscar" />
    </children>
 </AnchorPane>
