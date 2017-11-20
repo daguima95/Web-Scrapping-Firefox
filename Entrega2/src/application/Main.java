@@ -14,7 +14,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
@@ -27,14 +29,15 @@ public class Main extends Application {
     private BorderPane rootLayout;
     private ObservableList<String> tipos = FXCollections.observableArrayList();
     private ObservableList<String> marcas = FXCollections.observableArrayList();
+    Stage stage;
 	@Override
 	public void start(Stage primaryStage) {
+		stage = primaryStage;
 		this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Buscador de Cafeteras");
         initRootLayout();
-        showSample();
+        showSample(); 
         
-
 	}
 	
 	
@@ -73,8 +76,27 @@ public class Main extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-		
 	}
+	/*public static void mostrarVentanaSecundaria() {
+        try {
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("SearchController.fxml"));
+            AnchorPane ventanaDos = (AnchorPane) loader.load();
+            Stage ventana = new Stage();
+            ventana.setTitle("Busqueda");
+            ventana.initOwner(stage);
+            Scene scene = new Scene(ventanaDos);
+            ventana.setScene(scene);
+            SearchController controller = loader.getController();
+            controller.setStagePrincipal(ventana);
+            ventana.show();
+ 
+        } catch (Exception e) {
+            
+        }
+    }*/
+		
+	
+	
 
 	public static void main(String[] args) throws Exception {
 		
