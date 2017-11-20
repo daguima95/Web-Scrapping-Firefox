@@ -65,7 +65,7 @@ public class Main extends Application {
             
             rootLayout.setCenter(personOverview);
             
-            SampleController controller = loader.getController();
+            SampleGController controller = loader.getController();
             controller.setMain(this);
         } catch (IOException e) {
             e.printStackTrace();
