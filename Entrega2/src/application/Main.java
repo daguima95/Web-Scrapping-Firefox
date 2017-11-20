@@ -162,6 +162,7 @@ public class Main extends Application {
 			} else 	element.click();;
 		
 	}
+	/*
 	public ObservableList<Cafetera> mostrarLista(){
 		ArrayList<Cafetera> solucion = new ArrayList<Cafetera>();
 		String tipos = SampleGController.getTipo();
@@ -184,6 +185,8 @@ public class Main extends Application {
 		
 		
 	}
+	
+	*/
 	public String escogerMarca(String marca){
 		
 		
