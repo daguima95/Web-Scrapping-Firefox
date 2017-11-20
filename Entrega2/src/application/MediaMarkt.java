@@ -257,11 +257,7 @@ public class MediaMarkt {
 		waitingScrollKrupsMonoMM.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.brandsFilterElement:nth-child(1) > a:nth-child(2)")));
 		controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)")).click();
 		WebElement element = controlador2.findElement(By.cssSelector("div.brandsFilterElement:nth-child(5) > a:nth-child(2)"));
-		if (!element.isDisplayed()) {				
-			System.out.println("No está el elemento en la página en este momento");
-			JavascriptExecutor js = (JavascriptExecutor) controlador2;
-			js.executeScript("arguments[0].click();", element);
-			} else 	element.click();;
+		Main.comprobarDom(element, controlador2);
 		Main.waitForPageLoad(controlador2);	
 		listaNom = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'product1Description')]"));
 		listaPre = (ArrayList<WebElement>) controlador2.findElements(By.xpath("//*[contains(@class, 'meta-bigprices')]"));				

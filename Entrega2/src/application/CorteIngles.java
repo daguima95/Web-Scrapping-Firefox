@@ -440,7 +440,6 @@ public class CorteIngles {
 		return cafeteras;
 	}
 	
-	
 	public static WebDriver inicioFirefox(){
 		String exe = "*\\geckodriver.exe";
 		System.setProperty("webdriver.firefox.marionette", exe);
