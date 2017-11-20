@@ -15,6 +15,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
@@ -158,6 +160,35 @@ public class Main extends Application {
 			JavascriptExecutor js = (JavascriptExecutor) controlador2;
 			js.executeScript("arguments[0].click();", element);
 			} else 	element.click();;
+		
+	}
+	public ObservableList<Cafetera> mostrarLista(){
+		ArrayList<Cafetera> solucion = new ArrayList<Cafetera>();
+		String tipos = SampleGController.getTipo();
+		String marcas = SampleGController.getMarca();
+		CheckBox MM = SampleGController.getMediaMarkt();
+		CheckBox CI = SampleGController.getCorteIngles();
+		if(tipos == "capsulas"){
+			if(MM.isSelected()){
+				
+				
+			}else if(CI.isSelected()){
+				
+			}else{
+				
+				
+			}
+		}
+		
+		return null;
+		
+		
+	}
+	public String escogerMarca(String marca){
+		
+		
+		
+		return null;
 		
 	}
 }

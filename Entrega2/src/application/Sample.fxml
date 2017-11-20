@@ -12,8 +12,8 @@
       <ComboBox fx:id="tipos" layoutX="399.0" layoutY="52.0" prefWidth="150.0" />
       <Label layoutX="32.0" layoutY="56.0" text="Marca" />
       <Label layoutX="358.0" layoutY="56.0" text="Tipo" />
-      <CheckBox layoutX="76.0" layoutY="285.0" mnemonicParsing="false" text="Media Markt" />
-      <CheckBox layoutX="76.0" layoutY="322.0" mnemonicParsing="false" text="El Corte Ingles" />
+      <CheckBox fx:id="mediaMarkt" layoutX="76.0" layoutY="285.0" mnemonicParsing="false" text="Media Markt" />
+      <CheckBox fx:id="corteIngles" layoutX="76.0" layoutY="322.0" mnemonicParsing="false" text="El Corte Ingles" />
       <Button layoutX="448.0" layoutY="310.0" mnemonicParsing="false" text="Buscar" />
    </children>
 </AnchorPane>
