@@ -21,6 +21,8 @@ public class SampleGController{
 	protected CheckBox corteIngles;
 	public static String tipos;
 	public static String marcas;
+	public static CheckBox MM;
+	public static CheckBox CI;
 	
 	@SuppressWarnings("unused")
 	private Main main;
@@ -42,15 +44,36 @@ public class SampleGController{
 
 			@Override
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				// TODO Auto-generated method stub
+				tipos = newValue;
+				
+			}		
+		} 
+		);
+		marca.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				marcas = newValue;
 				
 			}
-		
-				
-			
 		}  );
+		MM.selectedProperty().addListener(new ChangeListener<Boolean>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {				
+				MM.setSelected(newValue);
+			}
 			
-		}
+		});
+		CI.selectedProperty().addListener(new ChangeListener<Boolean>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {				
+				CI.setSelected(newValue);
+			}
+			
+		});
+	}
 	
 		
 	
@@ -67,13 +90,13 @@ public class SampleGController{
 		
 	}
 	
-	/*
+	
 	public static CheckBox getMediaMarkt(){
-		return mediaMarkt;
+		return MM;
 	}
 	public static CheckBox getCorteIngles(){
-		return corteIngles;
+		return CI;
 	}
-	*/
+	
 	
 }
